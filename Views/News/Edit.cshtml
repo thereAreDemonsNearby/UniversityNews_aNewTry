@@ -1,0 +1,69 @@
+@model UniversityNews_aNewTry.Models.News
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "_AdminLayout";
+}
+
+<h2>Edit</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>News</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Title" />
+        <div class="form-group">
+            <label asp-for="NewsUrl" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="NewsUrl" class="form-control" />
+                <span asp-validation-for="NewsUrl" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="PictureUrl" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="PictureUrl" class="form-control" />
+                <span asp-validation-for="PictureUrl" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="OriginalDate" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="OriginalDate" class="form-control" />
+                <span asp-validation-for="OriginalDate" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="PublishDate" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="PublishDate" class="form-control" />
+                <span asp-validation-for="PublishDate" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="IsPublished" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="IsPublished" class="form-control" />
+                <span asp-validation-for="IsPublished" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="UniversityName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="UniversityName" class="form-control" />
+                <span asp-validation-for="UniversityName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

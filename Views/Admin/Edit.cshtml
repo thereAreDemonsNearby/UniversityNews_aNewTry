@@ -1,0 +1,77 @@
+@model IEnumerable<UniversityNews_aNewTry.Models.News>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_AdminLayout";
+}
+
+<h2>@ViewData["UniName"]</h2>
+
+<table class="table">
+   <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NewsUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PictureUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OriginalDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PublishDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsPublished)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewsUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PictureUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OriginalDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublishDate)
+            </td>
+            <td>
+                @if (item.IsPublished ?? false)
+                {
+                    @:Yes
+                }
+                else
+                {
+                    @:No
+                }
+            </td>
+            <td>
+                <a class="btn btn-sm btn-primary pull-right"
+                    asp-action="Publish" asp-route-id="@item.Title">
+                   @if (item.IsPublished ?? false)
+                   {
+                        @:Withdraw
+                   }
+                   else
+                   {
+                        @:Publish
+                   }
+               </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

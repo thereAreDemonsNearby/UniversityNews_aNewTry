@@ -1,0 +1,9 @@
+D:\codes\classProject\UniversityNews_aNewTry\bin\Debug\netcoreapp1.1\UniversityNews_aNewTry.deps.json
+D:\codes\classProject\UniversityNews_aNewTry\bin\Debug\netcoreapp1.1\UniversityNews_aNewTry.runtimeconfig.json
+D:\codes\classProject\UniversityNews_aNewTry\bin\Debug\netcoreapp1.1\UniversityNews_aNewTry.runtimeconfig.dev.json
+D:\codes\classProject\UniversityNews_aNewTry\bin\Debug\netcoreapp1.1\UniversityNews_aNewTry.dll
+D:\codes\classProject\UniversityNews_aNewTry\obj\Debug\netcoreapp1.1\UniversityNews_aNewTry.csprojResolveAssemblyReference.cache
+D:\codes\classProject\UniversityNews_aNewTry\obj\Debug\netcoreapp1.1\UniversityNews_aNewTry.AssemblyInfo.cs
+D:\codes\classProject\UniversityNews_aNewTry\bin\Debug\netcoreapp1.1\UniversityNews_aNewTry.pdb
+D:\codes\classProject\UniversityNews_aNewTry\obj\Debug\netcoreapp1.1\UniversityNews_aNewTry.dll
+D:\codes\classProject\UniversityNews_aNewTry\obj\Debug\netcoreapp1.1\UniversityNews_aNewTry.pdb

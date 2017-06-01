@@ -1,0 +1,60 @@
+@model UniversityNews_aNewTry.Models.News
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "_AdminLayout";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>News</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <input type="hidden" asp-for="Title" />
+        <dt>
+            @Html.DisplayNameFor(model => model.NewsUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NewsUrl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PictureUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PictureUrl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OriginalDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OriginalDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PublishDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PublishDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsPublished)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsPublished)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UniversityName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UniversityName)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>
