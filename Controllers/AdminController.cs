@@ -28,23 +28,33 @@ namespace UniversityNews_aNewTry.Controllers
         {
             ViewData["UniName"] = "BUAA";
             var list = context.News.Where(n => n.UniversityName == "BUAA").ToList();
-            //list.Sort((a, b) =>
-            //{
-            //    if ((a.IsPublished ?? false) == false &&
-            //        (b.IsPublished ?? false) == true)
-            //    {
-            //        return 1;
-            //    }
-            //    else if ((a.IsPublished ?? false) == true
-            //            && (b.IsPublished ?? false) == false)
-            //    {
-            //        return -1;
-            //    }
-            //    else
-            //    {
-            //        return 0;
-            //    }
-            //});
+            list.Sort((a, b) =>
+            {
+                var aOrigDate = a.OriginalDate ?? DateTime.MinValue;
+                var bOrigDate = b.OriginalDate ?? DateTime.MinValue;
+                if (aOrigDate < bOrigDate)
+                {
+                    return 1;
+                }
+                else if (aOrigDate > bOrigDate)
+                {
+                    return -1;
+                }
+                else
+                {
+                    //var aPubDate = a.PublishDate ?? DateTime.MinValue;
+                    //var bPubDate = b.PublishDate ?? DateTime.MinValue;
+                    //if £¨aPubDate < bPubDate)
+                    //{
+                    //    return -1;
+                    //}
+                    //else 
+                    //{
+                    //    return 1;
+                    //}
+                    return 0;
+                }
+            });
             return View("Edit", list);
         }
 
@@ -120,7 +130,7 @@ namespace UniversityNews_aNewTry.Controllers
                 return NotFound();
             }
 
-            if ( news.IsPublished ?? false )
+            if (news.IsPublished ?? false)
             {
                 news.IsPublished = false;
                 news.PublishDate = null;
@@ -167,6 +177,8 @@ namespace UniversityNews_aNewTry.Controllers
                 return NotFound();
             }
         }
+
+
 
         private bool NewsExists(string id)
         {
