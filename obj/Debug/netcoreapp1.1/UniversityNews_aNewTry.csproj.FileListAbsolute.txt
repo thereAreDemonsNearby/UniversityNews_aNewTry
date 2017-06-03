@@ -7,3 +7,12 @@ D:\codes\classProject\UniversityNews_aNewTry\obj\Debug\netcoreapp1.1\UniversityN
 D:\codes\classProject\UniversityNews_aNewTry\bin\Debug\netcoreapp1.1\UniversityNews_aNewTry.pdb
 D:\codes\classProject\UniversityNews_aNewTry\obj\Debug\netcoreapp1.1\UniversityNews_aNewTry.dll
 D:\codes\classProject\UniversityNews_aNewTry\obj\Debug\netcoreapp1.1\UniversityNews_aNewTry.pdb
+G:\Github\UniversityNews_aNewTry\bin\Debug\netcoreapp1.1\UniversityNews_aNewTry.deps.json
+G:\Github\UniversityNews_aNewTry\bin\Debug\netcoreapp1.1\UniversityNews_aNewTry.runtimeconfig.json
+G:\Github\UniversityNews_aNewTry\bin\Debug\netcoreapp1.1\UniversityNews_aNewTry.runtimeconfig.dev.json
+G:\Github\UniversityNews_aNewTry\bin\Debug\netcoreapp1.1\UniversityNews_aNewTry.dll
+G:\Github\UniversityNews_aNewTry\bin\Debug\netcoreapp1.1\UniversityNews_aNewTry.pdb
+G:\Github\UniversityNews_aNewTry\obj\Debug\netcoreapp1.1\UniversityNews_aNewTry.csprojResolveAssemblyReference.cache
+G:\Github\UniversityNews_aNewTry\obj\Debug\netcoreapp1.1\UniversityNews_aNewTry.AssemblyInfo.cs
+G:\Github\UniversityNews_aNewTry\obj\Debug\netcoreapp1.1\UniversityNews_aNewTry.dll
+G:\Github\UniversityNews_aNewTry\obj\Debug\netcoreapp1.1\UniversityNews_aNewTry.pdb
