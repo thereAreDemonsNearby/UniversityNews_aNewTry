@@ -78,13 +78,13 @@ namespace UniversityNews_aNewTry.Controllers
             var list = await context.News.Where(n => n.UniversityName == "THU").ToListAsync();
             list.Sort((a, b) =>
             {
-                if ((a.IsPublished ?? false) == false &&
-                    (b.IsPublished ?? false) == true)
+                var aOrigDate = a.OriginalDate ?? DateTime.MinValue;
+                var bOrigDate = b.OriginalDate ?? DateTime.MinValue;
+                if (aOrigDate < bOrigDate)
                 {
                     return 1;
                 }
-                else if ((a.IsPublished ?? false) == true
-                        && (b.IsPublished ?? false) == false)
+                else if (aOrigDate > bOrigDate)
                 {
                     return -1;
                 }
@@ -96,19 +96,19 @@ namespace UniversityNews_aNewTry.Controllers
             return View("Edit", list);
         }
 
-        public async Task<IActionResult> EditCCMU()
+        public async Task<IActionResult> EditRUC()
         {
-            ViewData["UniName"] = "CCMU";
-            var list = await context.News.Where(n => n.UniversityName == "CCMU").ToListAsync();
+            ViewData["UniName"] = "RUC";
+            var list = await context.News.Where(n => n.UniversityName == "RUC").ToListAsync();
             list.Sort((a, b) =>
             {
-                if ((a.IsPublished ?? false) == false &&
-                    (b.IsPublished ?? false) == true)
+                var aOrigDate = a.OriginalDate ?? DateTime.MinValue;
+                var bOrigDate = b.OriginalDate ?? DateTime.MinValue;
+                if (aOrigDate < bOrigDate)
                 {
                     return 1;
                 }
-                else if ((a.IsPublished ?? false) == true
-                        && (b.IsPublished ?? false) == false)
+                else if (aOrigDate > bOrigDate)
                 {
                     return -1;
                 }
@@ -171,9 +171,9 @@ namespace UniversityNews_aNewTry.Controllers
             {
                 return RedirectToAction("EditTHU");
             }
-            else if (news.UniversityName == "CCMU")
+            else if (news.UniversityName == "RUC")
             {
-                return RedirectToAction("EditCCMU");
+                return RedirectToAction("EditRUC");
             }
             else
             {
