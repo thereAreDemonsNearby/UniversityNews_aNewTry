@@ -60,7 +60,7 @@
             </td>
             <td>
                 <a class="btn btn-sm btn-primary pull-right"
-                    asp-action="Publish" asp-route-id="@item.Title">
+                    asp-action="Publish" asp-route-id="@item.Title" >
                    @if (item.IsPublished ?? false)
                    {
                         @:Withdraw
@@ -69,7 +69,31 @@
                    {
                         @:Publish
                    }
-               </a>
+                </a>
+                @*<form  method="post" asp-action="Publish">
+                    @{ 
+                        string val;
+                        bool change;
+                        if (item.IsPublished ?? false)
+                        {
+                            val = "Withdraw";
+                            change = false;
+                        }
+                        else
+                        {
+                            val = "Publish";
+                            change = true;
+                        }
+                    }
+                    <input type="hidden" asp-for="@item.Title" />
+                    <input type="hidden" asp-for="@item.NewsUrl" />
+                    <input type="hidden" asp-for="@item.PictureUrl" />
+                    <input type="hidden" asp-for="@item.OriginalDate" />
+                    <input type="hidden" asp-for="@item.PublishDate" />
+                    <input type="hidden" asp-for="@item.IsPublished" />
+                    <input type="hidden" asp-for="@item.UniversityName" />
+                    <input type="submit" value="@val" class="btn btn-sm btn-primary" />
+                </form>*@
             </td>
         </tr>
 }
