@@ -21,8 +21,8 @@ namespace UniversityNews_aNewTry.Controllers
         {
             DateTime date = dt ?? DateTime.Now;
 
-            var list = await context.News.Where(n => n.IsPublished ?? false
-                                    && n.OriginalDate.Value.Date.Equals(date.Date))
+            var list = await context.News.Where(n => (n.IsPublished ?? false)
+                                    && n.OriginalDate.Value.Date == date.Date)
                                     .ToListAsync();
             return View(list);
         }

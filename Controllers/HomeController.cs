@@ -19,7 +19,12 @@ namespace UniversityNews_aNewTry.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var list = await context.News.Where(n => n.IsPublished ?? false).ToListAsync();
+            var yesterday = DateTime.Now.AddDays(-1);
+            var theDayBeforeYesterDay = DateTime.Now.AddDays(-2);
+            var list = context.News.Where(n => n.IsPublished ?? false
+                    && (n.OriginalDate.Value.Date == DateTime.Now.Date
+                        || n.OriginalDate.Value.Date == yesterday.Date)
+                        ).ToList();
             return View(list);
         }
     }
