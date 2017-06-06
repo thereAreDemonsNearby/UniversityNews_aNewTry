@@ -11,7 +11,6 @@
     var RUCList = Model.Where(n => n.UniversityName == "RUC");
 }
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,20 +18,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>University News</title>
+    <title>UniversityNews</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
     <link rel="shortcut icon" href="images/ico/favicon.ico">
-</head>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
 <body>
     <!--/#header-->
     <header id="header" role="banner">
         <div class="main-nav">
             <div class="container">
                 <div class="row">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">
+                            <img class="img-responsive" src="images/logo.png" alt="logo">
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="scroll"><a href="#buaa">BUAA</a></li>
+                            <li class="scroll"><a href="#thu">THU</a></li>
+                            <li class="scroll"><a href="#ruc">RUC</a></li>
+                            <li class="scroll"><a href="#pku">PKU</a></li>
+                            <li><a class="no-scroll" href="#" target="_blank">HISTORY</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -52,49 +81,167 @@
                     <img class="img-responsive" src="images/slider/buaa.jpg" alt="slider">
                 </div>
                 <div class="item">
-                    <img class="img-responsive" src="images/slider/cmu.jpg" alt="slider">
+                    <img class="img-responsive" src="images/slider/thu.jpg" alt="slider">
                 </div>
                 <div class="item">
-                    <img class="img-responsive" src="images/slider/tu.jpg" alt="slider">
+                    <img class="img-responsive" src="images/slider/ruc.jpg" alt="slider">
                 </div>
                 <div class="item">
-                    <img class="img-responsive" src="images/slider/pu.jpg" alt="slider">
+                    <img class="img-responsive" src="images/slider/pku.jpg" alt="slider">
                 </div>
             </div>
         </div>
     </section>
 
-    <!--/#event buaa-->
-    <section id="event">
+    <!--/#buaa-->
+    <section id="buaa">
         <div class="container">
             <div class="row">
-                <img class="img-responsive" src="images/guitar.png" alt="guitar">
+                <div class="col-sm-12 col-md-9">
+                    <div id="buaa-carousel" class="carousel slide" data-interval="false">
+                        <h2 class="heading">THE ROCKING Performers</h2>
+                        <a class="buaa-control-left" href="#buaa-carousel" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+                        <a class="buaa-control-right" href="#buaa-carousel" data-slide="next"><i class="fa fa-angle-right"></i></a>
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="row">
+                                    @foreach (var item in BUAAList)
+                                    {
+                                        <div class="col-md-4">
+                                            <div class="single-buaa">
+                                                <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
+                                                <h4>Chester Bennington</h4>
+                                                <h5>Vocal</h5>
+                                            </div>
+
+                                            @*<div class="news_info" style="float: left; width: 80%;">
+                                                    <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
+                                                </div>*@
+                                        </div>
+                                    }
+
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    @foreach (var item in BUAAList)
+                                    {
+                                        <div class="col-sm-4">
+                                            <div class="single-buaa">
+                                                <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
+                                                <h4>Chester Bennington</h4>
+                                                <h5>Vocal</h5>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!--/#thu-->
+    <section id="thu">
+        <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-9">
-                    <div id="event-carousel" class="carousel slide" data-interval="false">
+                    <div id="thu-carousel" class="carousel slide" data-interval="false">
+                        <h2 class="heading">THE ROCKING Performers</h2>
+                        <a class="thu-control-left" href="#thu-carousel" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+                        <a class="thu-control-right" href="#thu-carousel" data-slide="next"><i class="fa fa-angle-right"></i></a>
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="row">
+                                    @foreach (var item in THUList)
+                                    {
+                                        <div class="col-md-4">
+                                            <div class="single-buaa">
+                                                <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
+                                                <h4>Chester Bennington</h4>
+                                                <h5>Vocal</h5>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                            <div class="item">
+                                @foreach (var item in THUList)
+                                    {
+                                        <div class="col-md-4">
+                                            <div class="single-buaa">
+                                                <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
+                                                <h4>Chester Bennington</h4>
+                                                <h5>Vocal</h5>
+                                            </div>
+                                        </div>
+                                    }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--/#ruc-->
+    <section id="ruc">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-9">
+                    <div id="ruc-carousel" class="carousel slide" data-interval="false">
+                        <h2 class="heading">THE ROCKING Performers</h2>
+                        <a class="ruc-control-left" href="#ruc-carousel" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+                        <a class="ruc-control-right" href="#ruc-carousel" data-slide="next"><i class="fa fa-angle-right"></i></a>
                         <div class="carousel-inner">
                             <div class="item active">
                                 <div class="row">
                                     <div class="col-sm-4">
-                                        <div class="single-event">
-                                            <img class="img-responsive" src="http://news.buaa.edu.cn/images/content/2017-04/20170415223213592852.jpg" alt="event-image">
-                                            <h4>CCTV������ֱ���䡷������У��չ��ȫ����Ұ�ȫ�����ա����������</h4>
-                                            <!--<h5>Vocal</h5>-->
+                                        <div class="single-ruc">
+                                            <img class="img-responsive" src="images/event/event1.jpg" alt="event-image">
+                                            <h4>Chester Bennington</h4>
+                                            <h5>Vocal</h5>
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
-                                        <div class="single-event">
-                                            <img class="img-responsive" src="http://news.buaa.edu.cn/images/content/2017-04/20170414151848138073.jpg" alt="event-image">
-                                            <h4>������Ժʿ���͡�Ժʿ������ ��ͬѧ�ǳ�̸����������·��</h4>
-                                            <!--<h5>vocals, rhythm guitar</h5>-->
+                                        <div class="single-ruc">
+                                            <img class="img-responsive" src="images/event/event2.jpg" alt="event-image">
+                                            <h4>Mike Shinoda</h4>
+                                            <h5>vocals, rhythm guitar</h5>
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
-                                        <div class="single-event">
-                                            <img class="img-responsive" src="http://news.buaa.edu.cn/images/content/2017-04/20170414144712240864.jpg" alt="event-image">
-                                            <h4>�й�����Ժ�ش���ѯ��Ŀ���⡰��ͨ����װ������ϵͳ����ս���о������������У�ٿ�</h4>
-                                            <!--<h5>drums</h5>-->
+                                        <div class="single-ruc">
+                                            <img class="img-responsive" src="images/event/event3.jpg" alt="event-image">
+                                            <h4>Rob Bourdon</h4>
+                                            <h5>drums</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="single-ruc">
+                                            <img class="img-responsive" src="images/event/event1.jpg" alt="event-image">
+                                            <h4>Chester Bennington</h4>
+                                            <h5>Vocal</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="single-ruc">
+                                            <img class="img-responsive" src="images/event/event2.jpg" alt="event-image">
+                                            <h4>Mike Shinoda</h4>
+                                            <h5>vocals, rhythm guitar</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="single-ruc">
+                                            <img class="img-responsive" src="images/event/event3.jpg" alt="event-image">
+                                            <h4>Rob Bourdon</h4>
+                                            <h5>drums</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -106,126 +253,63 @@
         </div>
     </section>
 
-    <!--/#twitter-feed-->
-    <section id="twitter">
-        <div id="twitter-feed" class="carousel slide" data-interval="false">
-            <div>
-                <img class="img-responsive" src="~/images/cmu.png" alt="twit">
-            </div>
-            <div class="row">
-                <div class="col-sm-6 col-sm-offset-3">
-                    <div class="text-center carousel-inner center-block">
-                        <div class="item active">
-                            <div>
-                                <p>��У20������ҽԺȫ���Ը��ƽ���ҽ��</p>
-                            </div>
-                            <p>
-                                ҽ�Ĺغ�������������Ŀ������ҽҩ�ֿ��ۺϸĸ���4��8����ʽ���������ҽ���������ص㣺ȡ���Һŷѡ����Ʒѣ�����ҽ�·���ѣ�ȡ��ҩƷ�ӳɣ��ڱ��������ɹ�ƽ̨��ͳһ�ɹ�ҩƷ������ҩƷ�ɹ��۸񣻵���435�����۸񡣱�����ҽ��ǣ����ȫ��ҽ�ĵ��񾭣�Ϊȷ���ĸ�ƽ�ȹ��ɣ���У20������ҽԺ�߶����ӣ�ȫ���Ը��ƽ���ҽ�ġ�... @*limit in 152 words*@
-                            </p>
-                        </div>
-                        <div class="item">
-                            <div>
-                                <p>����������������������ί��ί�ֿ�����쵼����У����ָ������</p>
-                            </div>
-                            <p>
-                                3��28�գ����������鸱��ǡ�����������������ί��ί����ί�̹�ί����ֿ�����쵼����У����ָ��������У��ί��Ǻ�������У��������Ժʿ��У�쵼��ͬ���С�
-                                ����2:30���쵼������������Ȥ�زι�����У��������¥�񾭿�ѧʵ���ң��˽�����У�о���Ա���л�����ѧ�о�����ɹ��Һͱ����еȿ�����Ŀ�ļ�������������������������ơ�
-                            </p>
-                        </div>
 
-
-                        <div class="item">
-                            <div>
-                                <p>��У��������ѧ������ҽѧ�����������￵��ѧ����רҵ</p>
-                            </div>
-                            <p>
-                                ���գ�������ӡ���ˡ����ڹ���2016�����ͨ�ߵ�ѧУ����רҵ���������������֪ͨ�����̸� [2017]2�ţ�����У�걨�Ķ���ѧ�;���ҽѧ��������רҵͨ�����������������������￵��ѧ����������������רҵ��
-                                ����רҵ�걨�ǻ��ڹ���ҽҩ������ҵ����˲ŵĽ�ȱ��״��ҽ�Ƹĸ�����󣬹��ҽ�����������ί������������ҽѧԺУ�������ѧ������
-                            </p>
-                        </div>
-                    </div>
-                    <a class="twitter-control-left" href="#twitter-feed" data-slide="prev"><i class="fa fa-angle-left"></i></a>
-                    <a class="twitter-control-right" href="#twitter-feed" data-slide="next"><i class="fa fa-angle-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--/#about tu-->
-    <section id="about">
+    <!--/#pku-->
+    <section id="pku">
         <div class="container">
             <div class="row">
-                <img class="img-responsive" src="images/tu.png" alt="guitar">
-            </div>
-            <div class="row">
                 <div class="col-sm-12 col-md-9">
-                    <div id="event-carousel" class="carousel slide" data-interval="false">
+                    <div id="pku-carousel" class="carousel slide" data-interval="false">
+                        <h2 class="heading">THE ROCKING Performers</h2>
+                        <a class="pku-control-left" href="#pku-carousel" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+                        <a class="pku-control-right" href="#pku-carousel" data-slide="next"><i class="fa fa-angle-right"></i></a>
                         <div class="carousel-inner">
                             <div class="item active">
                                 <div class="row">
                                     <div class="col-sm-4">
-                                        <div class="single-event">
-                                            <img class="img-responsive" src="http://news.tsinghua.edu.cn/publish/thunews/9658/20170414203547609314441/1492173446427.jpg" alt="event-image">
-                                            <h4>�廪��ѧ��ѧίԱ�����2016-2017ѧ��ȴ���ѧ�ڵ�һ��ȫ�����</h4>
-                                            <!--<h5>Vocal</h5>-->
+                                        <div class="single-pku">
+                                            <img class="img-responsive" src="images/event/event1.jpg" alt="event-image">
+                                            <h4>Chester Bennington</h4>
+                                            <h5>Vocal</h5>
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
-                                        <div class="single-event">
-                                            <img class="img-responsive" src="http://news.tsinghua.edu.cn/publish/thunews/9662/20170414164228460468132/1492160538061.jpg" alt="event-image">
-                                            <h4>�ڶ���ȫ����ѧԺ���´���������ͼ��ʽ���</h4>
-                                            <!--<h5>vocals, rhythm guitar</h5>-->
+                                        <div class="single-pku">
+                                            <img class="img-responsive" src="images/event/event2.jpg" alt="event-image">
+                                            <h4>Mike Shinoda</h4>
+                                            <h5>vocals, rhythm guitar</h5>
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
-                                        <div class="single-event">
-                                            <img class="img-responsive" src="http://news.tsinghua.edu.cn/publish/thunews/9662/20170414112213482585505/1492140227525.jpg" alt="event-image">
-                                            <h4>�ҹ���ҵ������Ⱦ���������׸����ҹ���ʵ�������廪����</h4>
-                                            <!--<h5>drums</h5>-->
+                                        <div class="single-pku">
+                                            <img class="img-responsive" src="images/event/event3.jpg" alt="event-image">
+                                            <h4>Rob Bourdon</h4>
+                                            <h5>drums</h5>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--/#explore pu-->
-    <section id="explore">
-        <div class="container">
-            <div class="row">
-                <div>
-                    <img class="img-responsive" src="images/pu.png" alt="">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12 col-md-9">
-                    <div id="event-carousel" class="carousel slide" data-interval="false">
-                        <div class="carousel-inner">
-                            <div class="item active">
+                            <div class="item">
                                 <div class="row">
                                     <div class="col-sm-4">
-                                        <div class="single-event">
-                                            <img class="img-responsive" src="http://10.254.1.82/cache/7/04/pku.edu.cn/1d17442454bfb80a7560ef480f348668/484d7eb258891a2cc8c80c.jpg" alt="event-image">
-                                            <h4>�����ʮ��Ѳ����ר��Ѳ�ӱ�����ѧ��ί������Ա���ٿ�</h4>
-                                            <!--<h5>Vocal</h5>-->
+                                        <div class="single-pku">
+                                            <img class="img-responsive" src="images/event/event1.jpg" alt="event-image">
+                                            <h4>Chester Bennington</h4>
+                                            <h5>Vocal</h5>
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
-                                        <div class="single-event">
-                                            <img class="img-responsive" src="http://pkunews.pku.edu.cn/xwzh/attachement/jpg/site2/20170414/082e5f06ea861a5ac57c08.JPG" alt="event-image">
-                                            <h4>��۳��д�ѧУ����λһ�����ñ����������ݽ�</h4>
-                                            <!--<h5>vocals, rhythm guitar</h5>-->
+                                        <div class="single-pku">
+                                            <img class="img-responsive" src="images/event/event2.jpg" alt="event-image">
+                                            <h4>Mike Shinoda</h4>
+                                            <h5>vocals, rhythm guitar</h5>
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
-                                        <div class="single-event">
-                                            <img class="img-responsive" src="http://pkunews.pku.edu.cn/xwzh/attachement/png/site2/20170414/64006a60c64a1a5a65c307.png" alt="event-image">
-                                            <h4>������ѧ�빤��ѧԺ���찲�Ź��커���ӿ�չ����ѧһ����ѧϰ�����</h4>
-                                            <!--<h5>drums</h5>-->
+                                        <div class="single-pku">
+                                            <img class="img-responsive" src="images/event/event3.jpg" alt="event-image">
+                                            <h4>Rob Bourdon</h4>
+                                            <h5>drums</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -238,11 +322,10 @@
     </section>
 
     <!--/#footer-->
-
     <footer id="footer">
         <div class="container">
             <div class="text-center">
-                <p> Copyright  &copy;2017 <br> Designed by cszh</a></p>
+                <p> Copyright  &copy;2017 <br> cszh </p>
             </div>
         </div>
     </footer>
@@ -259,103 +342,104 @@
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
+
 @*<style type="text/css">
-    /*body
-    {
-        background-image: url(buaa_bg.jpg);
-    }*/
-    /*.row {
-        overflow: hidden;
-    }
-    .div [class*="col-"] {
-        margin-bottom: -99999px;
-        padding-bottom: 99999px;
-    }*/
-</style>
+        /*body
+        {
+            background-image: url(buaa_bg.jpg);
+        }*/
+        /*.row {
+            overflow: hidden;
+        }
+        .div [class*="col-"] {
+            margin-bottom: -99999px;
+            padding-bottom: 99999px;
+        }*/
+    </style>
 
-<h2>@Title</h2>
+    <h2>@Title</h2>
 
-<!--����-->
-<div class="row" style="background-image: url(~/images/mainPage/buaa_bg.png);background-size: 100%;position: relative;">
-    <!--<img alt="Bootstrap Image Preview" src="~/images/mainPage/buaa_bg.jpg">
-    -->
-    <!--ѧУlogo-->
-    <div class="img-rounded" style="position: absolute, top:0,left:0">
-        <img src="~/images/mainPage/buaa_logo.jpg" class="img-rounded" style="width: 120px;height: 120px;padding: 15px;" />
-    </div>
-    <!--��������-->
-    @foreach (var item in BUAAList)
-    {
-        <div class="col-md-4">
-            <div class="news_image" style="float: left;">
-                <img src="@item.PictureUrl" class="img-rounded" width="80%"/>
-            </div>
-            <div class="news_info" style="float: left; width: 80%;">
-                <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
-            </div>
+    <!--����-->
+    <div class="row" style="background-image: url(~/images/mainPage/buaa_bg.png);background-size: 100%;position: relative;">
+        <!--<img alt="Bootstrap Image Preview" src="~/images/mainPage/buaa_bg.jpg">
+        -->
+        <!--ѧУlogo-->
+        <div class="img-rounded" style="position: absolute, top:0,left:0">
+            <img src="~/images/mainPage/buaa_logo.jpg" class="img-rounded" style="width: 120px;height: 120px;padding: 15px;" />
         </div>
-    }
-</div>
-<!--�廪-->
-<div class="row" style="background-image: url(~/images/mainPage/thu_bg.png);background-size: 100%;position: relative;">
-    <!--<img alt="Bootstrap Image Preview" src="~/images/mainPage/buaa_bg.jpg">
-    -->
-    <!--ѧУlogo-->
-    <div class="img-rounded" style="position: absolute, top:0,left:0">
-        <img src="~/images/mainPage/thu_logo.png" class="img-rounded" style="width: 120px;height: 120px;padding: 15px;" />
+        <!--��������-->
+        @foreach (var item in BUAAList)
+        {
+            <div class="col-md-4">
+                <div class="news_image" style="float: left;">
+                    <img src="@item.PictureUrl" class="img-rounded" width="80%"/>
+                </div>
+                <div class="news_info" style="float: left; width: 80%;">
+                    <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
+                </div>
+            </div>
+        }
     </div>
-    <!--��������-->
-    @foreach (var item in THUList)
-    {
-        <div class="col-md-4">
-            <div class="news_image" style="float: left;">
-                <img src="@item.PictureUrl" class="img-rounded" width="80%" />
-            </div>
-            <div class="news_info" style="float: left; width: 80%;">
-                <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
-            </div>
+    <!--�廪-->
+    <div class="row" style="background-image: url(~/images/mainPage/thu_bg.png);background-size: 100%;position: relative;">
+        <!--<img alt="Bootstrap Image Preview" src="~/images/mainPage/buaa_bg.jpg">
+        -->
+        <!--ѧУlogo-->
+        <div class="img-rounded" style="position: absolute, top:0,left:0">
+            <img src="~/images/mainPage/thu_logo.png" class="img-rounded" style="width: 120px;height: 120px;padding: 15px;" />
         </div>
-    }
-</div>
-<!--����-->
-<div class="row" style="background-image: url(~/images/mainPage/pku_bg.png);background-size: 100%;position: relative;">
-    <!--<img alt="Bootstrap Image Preview" src="~/images/mainPage/buaa_bg.jpg">
-    -->
-    <!--ѧУlogo-->
-    <div class="img-rounded" style="position: absolute, top:0,left:0">
-        <img src="~/images/mainPage/pku_logo.png" class="img-rounded" style="width: 120px;height: 120px;padding: 15px;" />
+        <!--��������-->
+        @foreach (var item in THUList)
+        {
+            <div class="col-md-4">
+                <div class="news_image" style="float: left;">
+                    <img src="@item.PictureUrl" class="img-rounded" width="80%" />
+                </div>
+                <div class="news_info" style="float: left; width: 80%;">
+                    <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
+                </div>
+            </div>
+        }
     </div>
-    <!--��������-->
-    @foreach (var item in PKUList)
-    {
-        <div class="col-md-4">
-            <div class="news_image" style="float: left;">
-                <img src="@item.PictureUrl" class="img-rounded" width="80%" />
-            </div>
-            <div class="news_info" style="float: left; width: 80%;">
-                <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
-            </div>
+    <!--����-->
+    <div class="row" style="background-image: url(~/images/mainPage/pku_bg.png);background-size: 100%;position: relative;">
+        <!--<img alt="Bootstrap Image Preview" src="~/images/mainPage/buaa_bg.jpg">
+        -->
+        <!--ѧУlogo-->
+        <div class="img-rounded" style="position: absolute, top:0,left:0">
+            <img src="~/images/mainPage/pku_logo.png" class="img-rounded" style="width: 120px;height: 120px;padding: 15px;" />
         </div>
-    }
-</div>
-<!--�˴�-->
-<div class="row" style="background-image: url(~/images/mainPage/ruc_bg.png);background-size: 100%;position: relative;">
-    <!--<img alt="Bootstrap Image Preview" src="~/images/mainPage/buaa_bg.jpg">
-    -->
-    <!--ѧУlogo-->
-    <div class="img-rounded" style="position: absolute, top:0,left:0">
-        <img src="~/images/mainPage/ruc_logo.png" class="img-rounded" style="width: 120px;height: 120px;padding: 15px;" />
+        <!--��������-->
+        @foreach (var item in PKUList)
+        {
+            <div class="col-md-4">
+                <div class="news_image" style="float: left;">
+                    <img src="@item.PictureUrl" class="img-rounded" width="80%" />
+                </div>
+                <div class="news_info" style="float: left; width: 80%;">
+                    <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
+                </div>
+            </div>
+        }
     </div>
-    <!--��������-->
-    @foreach (var item in RUCList)
-    {
-        <div class="col-md-4">
-            <div class="news_image" style="float: left;">
-                <img src="@item.PictureUrl" class="img-rounded" width="80%" />
-            </div>
-            <div class="news_info" style="float: left; width: 80%;">
-                <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
-            </div>
+    <!--�˴�-->
+    <div class="row" style="background-image: url(~/images/mainPage/ruc_bg.png);background-size: 100%;position: relative;">
+        <!--<img alt="Bootstrap Image Preview" src="~/images/mainPage/buaa_bg.jpg">
+        -->
+        <!--ѧУlogo-->
+        <div class="img-rounded" style="position: absolute, top:0,left:0">
+            <img src="~/images/mainPage/ruc_logo.png" class="img-rounded" style="width: 120px;height: 120px;padding: 15px;" />
         </div>
-    }
-</div>*@
+        <!--��������-->
+        @foreach (var item in RUCList)
+        {
+            <div class="col-md-4">
+                <div class="news_image" style="float: left;">
+                    <img src="@item.PictureUrl" class="img-rounded" width="80%" />
+                </div>
+                <div class="news_info" style="float: left; width: 80%;">
+                    <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
+                </div>
+            </div>
+        }
+    </div>*@
