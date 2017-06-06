@@ -19,10 +19,8 @@ namespace UniversityNews_aNewTry.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var yesterday = DateTime.Now.AddDays(-1);
-            var theDayBeforeYesterDay = DateTime.Now.AddDays(-2);
             var list = await context.News.Where(n => ((n.IsPublished ?? false)
-                                                    && NearXDays(n.OriginalDate.Value, 10))
+                                                    && NearXDays(n.OriginalDate.Value, 20))
                                                 ).ToListAsync();
             return View(list);
         }

@@ -253,6 +253,10 @@ h2 {
   border: 1px solid #fff;
 }
 
+img.UniLogo {
+    width: 15%;
+}
+
 /*************************
 *******BUAA CSS******
 **************************/
@@ -283,7 +287,7 @@ h2 {
 
     .single-buaa h4
     {
-        color: #FFFFFF;
+        color: black;
         font-size: 24px;
         font-weight: 300;
         line-height: 26px;
@@ -349,11 +353,12 @@ h2 {
 .single-ruc
 {
     margin-bottom: 70px;
+
 }
 
     .single-ruc h4
     {
-        color: #FFFFFF;
+        color: black;
         font-size: 24px;
         font-weight: 300;
         line-height: 26px;
@@ -423,7 +428,7 @@ h2 {
 
     .single-pku h4
     {
-        color: #FFFFFF;
+        color: black;
         font-size: 24px;
         font-weight: 300;
         line-height: 26px;
@@ -492,7 +497,7 @@ h2 {
 
     .single-thu h4
     {
-        color: #FFFFFF;
+        color: black;
         font-size: 24px;
         font-weight: 300;
         line-height: 26px;

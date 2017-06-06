@@ -1,14 +1,16 @@
-@model List<News>
+ï»¿@model List<News>
 
 @{
-    ViewData["Title"] = "Ö÷Ò³";
-    string Title = "Ö÷Ò³";
+    ViewData["Title"] = "ï¿½ï¿½Ò³";
+    string Title = "ï¿½ï¿½Ò³";
     Layout = null;
 
     var BUAAList = Model.Where(n => n.UniversityName == "BUAA");
     var THUList = Model.Where(n => n.UniversityName == "THU");
     var PKUList = Model.Where(n => n.UniversityName == "PKU");
     var RUCList = Model.Where(n => n.UniversityName == "RUC");
+    int rowCtrl;
+    const int itemsPerRow = 3;
 }
 
 
@@ -100,42 +102,44 @@
             <div class="row">
                 <div class="col-sm-12 col-md-9">
                     <div id="buaa-carousel" class="carousel slide" data-interval="false">
-                        <h2 class="heading">THE ROCKING Performers</h2>
-                        <a class="buaa-control-left" href="#buaa-carousel" data-slide="prev"><i class="fa fa-angle-left"></i></a>
-                        <a class="buaa-control-right" href="#buaa-carousel" data-slide="next"><i class="fa fa-angle-right"></i></a>
+                        @*<h2 class="heading">BUAA News</h2>*@
+                        <img class="UniLogo" src="~/images/mainPage/buaa_logo.jpg"/>
+                        @*<a class="buaa-control-left" href="#buaa-carousel" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+                        <a class="buaa-control-right" href="#buaa-carousel" data-slide="next"><i class="fa fa-angle-right"></i></a>*@
                         <div class="carousel-inner">
                             <div class="item active">
-                                <div class="row">
+                                @*<div class="row">
                                     @foreach (var item in BUAAList)
                                     {
                                         <div class="col-md-4">
                                             <div class="single-buaa">
                                                 <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
-                                                <h4>Chester Bennington</h4>
-                                                <h5>Vocal</h5>
+                                                <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
                                             </div>
-
-                                            @*<div class="news_info" style="float: left; width: 80%;">
-                                                    <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
-                                                </div>*@
                                         </div>
                                     }
-
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="row">
-                                    @foreach (var item in BUAAList)
+                                </div>*@
+                                @{
+                                    rowCtrl = 0;
+                                }
+                                @foreach (var item in BUAAList)
+                                {
+                                    if (rowCtrl % itemsPerRow == 0)
                                     {
-                                        <div class="col-sm-4">
-                                            <div class="single-buaa">
-                                                <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
-                                                <h4>Chester Bennington</h4>
-                                                <h5>Vocal</h5>
-                                            </div>
-                                        </div>
+                                        @:<div class="row">
                                     }
-                                </div>
+                                    <div class="col-md-4">
+                                        <div class="single-buaa">
+                                            <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
+                                            <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
+                                        </div>
+                                    </div>
+                                    if (rowCtrl % itemsPerRow == itemsPerRow - 1)
+                                    {
+                                        @:</div>
+                                    }
+                                    rowCtrl++;
+                                }
                             </div>
                         </div>
                     </div>
@@ -150,35 +154,42 @@
             <div class="row">
                 <div class="col-sm-12 col-md-9">
                     <div id="thu-carousel" class="carousel slide" data-interval="false">
-                        <h2 class="heading">THE ROCKING Performers</h2>
-                        <a class="thu-control-left" href="#thu-carousel" data-slide="prev"><i class="fa fa-angle-left"></i></a>
-                        <a class="thu-control-right" href="#thu-carousel" data-slide="next"><i class="fa fa-angle-right"></i></a>
+                        @*<h2 class="heading">THU News</h2>*@
+                        <img class="UniLogo" src="~/images/mainPage/thu_logo.png" />
                         <div class="carousel-inner">
                             <div class="item active">
-                                <div class="row">
+                                @*<div class="row">
                                     @foreach (var item in THUList)
                                     {
                                         <div class="col-md-4">
                                             <div class="single-buaa">
                                                 <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
-                                                <h4>Chester Bennington</h4>
-                                                <h5>Vocal</h5>
+                                                <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
                                             </div>
                                         </div>
                                     }
-                                </div>
-                            </div>
-                            <div class="item">
+                                </div>*@
+                                @{
+                                    rowCtrl = 0;
+                                }
                                 @foreach (var item in THUList)
+                                {
+                                    if (rowCtrl % itemsPerRow == 0)
                                     {
-                                        <div class="col-md-4">
-                                            <div class="single-buaa">
-                                                <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
-                                                <h4>Chester Bennington</h4>
-                                                <h5>Vocal</h5>
-                                            </div>
-                                        </div>
+                                        @:<div class="row">
                                     }
+                                    <div class="col-md-4">
+                                        <div class="single-buaa">
+                                            <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
+                                            <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
+                                        </div>
+                                    </div>
+                                    if (rowCtrl % itemsPerRow == itemsPerRow - 1)
+                                    {
+                                        @:</div>
+                                    }
+                                    rowCtrl++;
+                                }
                             </div>
                         </div>
                     </div>
@@ -193,34 +204,41 @@
             <div class="row">
                 <div class="col-sm-12 col-md-9">
                     <div id="ruc-carousel" class="carousel slide" data-interval="false">
-                        <h2 class="heading">THE ROCKING Performers</h2>
-                        <a class="ruc-control-left" href="#ruc-carousel" data-slide="prev"><i class="fa fa-angle-left"></i></a>
-                        <a class="ruc-control-right" href="#ruc-carousel" data-slide="next"><i class="fa fa-angle-right"></i></a>
+                        @*<h2 class="heading">RUC News</h2>*@
+                        <img class="UniLogo" src="~/images/mainPage/ruc_logo.png" />
                         <div class="carousel-inner">
                             <div class="item active">
-                                <div class="row">
+                                @*<div class="row">
                                     @foreach (var item in RUCList)
                                     {
                                         <div class="col-md-4">
                                             <div class="single-buaa">
                                                 <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
-                                                <h4>Chester Bennington</h4>
-                                                <h5>Vocal</h5>
+                                                <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
                                             </div>
                                         </div>
                                     }
-                                </div>
-                            </div>
-                            <div class="item">
+                                </div>*@
+                                @{ 
+                                    rowCtrl = 0;
+                                }
                                 @foreach (var item in RUCList)
                                 {
+                                    if (rowCtrl % itemsPerRow == 0)
+                                    {
+                                        @:<div class="row">
+                                    }
                                     <div class="col-md-4">
                                         <div class="single-buaa">
                                             <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
-                                            <h4>Chester Bennington</h4>
-                                            <h5>Vocal</h5>
+                                            <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
                                         </div>
                                     </div>
+                                    if (rowCtrl % itemsPerRow == itemsPerRow - 1)
+                                    {
+                                        @:</div>
+                                    }
+                                    rowCtrl++;
                                 }
                             </div>
                         </div>
@@ -238,34 +256,41 @@
             <div class="row">
                 <div class="col-sm-12 col-md-9">
                     <div id="pku-carousel" class="carousel slide" data-interval="false">
-                        <h2 class="heading">THE ROCKING Performers</h2>
-                        <a class="pku-control-left" href="#pku-carousel" data-slide="prev"><i class="fa fa-angle-left"></i></a>
-                        <a class="pku-control-right" href="#pku-carousel" data-slide="next"><i class="fa fa-angle-right"></i></a>
+                        @*<h2 class="heading">PKU News</h2>*@
+                        <img class="UniLogo" src="~/images/mainPage/pku_logo.png" />
                         <div class="carousel-inner">
                             <div class="item active">
-                                <div class="row">
+                                @*<div class="row">
                                     @foreach (var item in PKUList)
                                     {
                                         <div class="col-md-4">
                                             <div class="single-buaa">
                                                 <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
-                                                <h4>Chester Bennington</h4>
-                                                <h5>Vocal</h5>
+                                                <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
                                             </div>
                                         </div>
                                     }
-                                </div>
-                            </div>
-                            <div class="item">
+                                </div>*@
+                                @{
+                                    rowCtrl = 0;
+                                }
                                 @foreach (var item in PKUList)
                                 {
+                                    if (rowCtrl % itemsPerRow == 0)
+                                    {
+                                        @:<div class="row">
+                                    }
                                     <div class="col-md-4">
                                         <div class="single-buaa">
                                             <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
-                                            <h4>Chester Bennington</h4>
-                                            <h5>Vocal</h5>
+                                            <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
                                         </div>
                                     </div>
+                                    if (rowCtrl % itemsPerRow == itemsPerRow - 1)
+                                    {
+                                        @:</div>
+                                    }
+                                    rowCtrl++;
                                 }
                             </div>
                         </div>
