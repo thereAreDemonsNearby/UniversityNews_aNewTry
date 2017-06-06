@@ -257,6 +257,11 @@ img.UniLogo {
     width: 15%;
 }
 
+.date_form {
+    height: 150px;
+    background-image: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497363608&di=7b7054f61bb67c920a382db3359e837f&imgtype=jpg&er=1&src=http%3A%2F%2Fi-7.vcimg.com%2Fcrop%2F4b160f4a00e94de8bc26f432342d5b2f57322%28600x%29%2Fthumb.jpg)
+}
+
 /*************************
 *******BUAA CSS******
 **************************/

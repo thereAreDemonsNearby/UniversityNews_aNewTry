@@ -7,97 +7,225 @@
     var THUList = Model.Where(n => n.UniversityName == "THU");
     var PKUList = Model.Where(n => n.UniversityName == "PKU");
     var RUCList = Model.Where(n => n.UniversityName == "RUC");
+    int rowCtrl;
+    const int itemsPerRow = 3;
 }
 
-<h2>History Page</h2>
+<div class="date_form">
+    <div style="height: 100px">
 
-<form asp-action="Index">
-    Date: <input type="date" name="dt"/>
-    <input type="submit" value="Submit" />
-</form>
+    </div>
+    <form asp-action="Index" role="form">
+        <div class="form-group" style="color:black; margin-left:60px">
+            <label for="date"><font size="6">Date</font></label>
+            <input type="date" name="dt" />
+            <input type="submit" value="Submit" />
+        </div>
+    </form>
+</div>
 
-<!--北航-->
-<div class="row" style="background-image: url(~/images/mainPage/buaa_bg.png);background-size: 100%;position: relative;">
-    <!--<img alt="Bootstrap Image Preview" src="~/images/mainPage/buaa_bg.jpg">
-    -->
-    <!--学校logo-->
-    <div class="img-rounded" style="position: absolute, top:0,left:0">
-        <img src="~/images/mainPage/buaa_logo.jpg" class="img-rounded" style="width: 120px;height: 120px;padding: 15px;" />
-    </div>
-    <!--单条新闻-->
-    @foreach (var item in BUAAList)
-    {
-        <div class="col-md-4">
-            <div class="news_image" style="float: left;">
-                <img src="@item.PictureUrl" class="img-rounded" width="80%" />
-            </div>
-            <div class="news_info" style="float: left; width: 80%;">
-                <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
-            </div>
-        </div>
-    }
-</div>
-<!--清华-->
-<div class="row" style="background-image: url(~/images/mainPage/thu_bg.png);background-size: 100%;position: relative;">
-    <!--<img alt="Bootstrap Image Preview" src="~/images/mainPage/buaa_bg.jpg">
-    -->
-    <!--学校logo-->
-    <div class="img-rounded" style="position: absolute, top:0,left:0">
-        <img src="~/images/mainPage/thu_logo.png" class="img-rounded" style="width: 120px;height: 120px;padding: 15px;" />
-    </div>
-    <!--单条新闻-->
-    @foreach (var item in THUList)
-    {
-        <div class="col-md-4">
-            <div class="news_image" style="float: left;">
-                <img src="@item.PictureUrl" class="img-rounded" width="80%" />
-            </div>
-            <div class="news_info" style="float: left; width: 80%;">
-                <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
-            </div>
-        </div>
-    }
-</div>
-<!--北大-->
-<div class="row" style="background-image: url(~/images/mainPage/pku_bg.png);background-size: 100%;position: relative;">
-    <!--<img alt="Bootstrap Image Preview" src="~/images/mainPage/buaa_bg.jpg">
-    -->
-    <!--学校logo-->
-    <div class="img-rounded" style="position: absolute, top:0,left:0">
-        <img src="~/images/mainPage/pku_logo.png" class="img-rounded" style="width: 120px;height: 120px;padding: 15px;" />
-    </div>
-    <!--单条新闻-->
-    @foreach (var item in PKUList)
-    {
-        <div class="col-md-4">
-            <div class="news_image" style="float: left;">
-                <img src="@item.PictureUrl" class="img-rounded" width="80%" />
-            </div>
-            <div class="news_info" style="float: left; width: 80%;">
-                <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
+<section id="buaa">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-9">
+                <div id="buaa-carousel" class="carousel slide" data-interval="false">
+                    @*<h2 class="heading">BUAA News</h2>*@
+                    <img class="UniLogo" src="~/images/mainPage/buaa_logo.jpg" />
+                    @*<a class="buaa-control-left" href="#buaa-carousel" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+                        <a class="buaa-control-right" href="#buaa-carousel" data-slide="next"><i class="fa fa-angle-right"></i></a>*@
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            @*<div class="row">
+                                    @foreach (var item in BUAAList)
+                                    {
+                                        <div class="col-md-4">
+                                            <div class="single-buaa">
+                                                <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
+                                                <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>*@
+                            @{
+                                rowCtrl = 0;
+                            }
+                            @foreach (var item in BUAAList)
+                            {
+                                if (rowCtrl % itemsPerRow == 0)
+                                {
+                                    @:<div class="row">
+                                    }
+                                <div class="col-md-4">
+                                    <div class="single-buaa">
+                                        <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
+                                        <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
+                                    </div>
+                                </div>
+                                if (rowCtrl % itemsPerRow == itemsPerRow - 1)
+                                {
+                                    @:</div>
+                                    }
+                                rowCtrl++;
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    }
-</div>
-<!--人大-->
-<div class="row" style="background-image: url(~/images/mainPage/ruc_bg.png);background-size: 100%;position: relative;">
-    <!--<img alt="Bootstrap Image Preview" src="~/images/mainPage/buaa_bg.jpg">
-    -->
-    <!--学校logo-->
-    <div class="img-rounded" style="position: absolute, top:0,left:0">
-        <img src="~/images/mainPage/ruc_logo.png" class="img-rounded" style="width: 120px;height: 120px;padding: 15px;" />
     </div>
-    <!--单条新闻-->
-    @foreach (var item in RUCList)
-    {
-        <div class="col-md-4">
-            <div class="news_image" style="float: left;">
-                <img src="@item.PictureUrl" class="img-rounded" width="80%" />
-            </div>
-            <div class="news_info" style="float: left; width: 80%;">
-                <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
+</section>
+
+<!--/#thu-->
+<section id="thu">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-9">
+                <div id="thu-carousel" class="carousel slide" data-interval="false">
+                    @*<h2 class="heading">THU News</h2>*@
+                    <img class="UniLogo" src="~/images/mainPage/thu_logo.png" />
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            @*<div class="row">
+                                    @foreach (var item in THUList)
+                                    {
+                                        <div class="col-md-4">
+                                            <div class="single-buaa">
+                                                <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
+                                                <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>*@
+                            @{
+                                rowCtrl = 0;
+                            }
+                            @foreach (var item in THUList)
+                            {
+                                if (rowCtrl % itemsPerRow == 0)
+                                {
+                                    @:<div class="row">
+                                    }
+                                <div class="col-md-4">
+                                    <div class="single-buaa">
+                                        <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
+                                        <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
+                                    </div>
+                                </div>
+                                if (rowCtrl % itemsPerRow == itemsPerRow - 1)
+                                {
+                                    @:</div>
+                                    }
+                                rowCtrl++;
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    }
-</div>
+    </div>
+</section>
+
+<!--/#ruc-->
+<section id="ruc">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-9">
+                <div id="ruc-carousel" class="carousel slide" data-interval="false">
+                    @*<h2 class="heading">RUC News</h2>*@
+                    <img class="UniLogo" src="~/images/mainPage/ruc_logo.png" />
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            @*<div class="row">
+                                    @foreach (var item in RUCList)
+                                    {
+                                        <div class="col-md-4">
+                                            <div class="single-buaa">
+                                                <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
+                                                <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>*@
+                            @{
+                                rowCtrl = 0;
+                            }
+                            @foreach (var item in RUCList)
+                            {
+                                if (rowCtrl % itemsPerRow == 0)
+                                {
+                                    @:<div class="row">
+                                    }
+                                <div class="col-md-4">
+                                    <div class="single-buaa">
+                                        <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
+                                        <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
+                                    </div>
+                                </div>
+                                if (rowCtrl % itemsPerRow == itemsPerRow - 1)
+                                {
+                                    @:</div>
+                                    }
+                                rowCtrl++;
+                            }
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--/#pku-->
+<section id="pku">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-9">
+                <div id="pku-carousel" class="carousel slide" data-interval="false">
+                    @*<h2 class="heading">PKU News</h2>*@
+                    <img class="UniLogo" src="~/images/mainPage/pku_logo.png" />
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            @*<div class="row">
+                                    @foreach (var item in PKUList)
+                                    {
+                                        <div class="col-md-4">
+                                            <div class="single-buaa">
+                                                <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
+                                                <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>*@
+                            @{
+                                rowCtrl = 0;
+                            }
+                            @foreach (var item in PKUList)
+                            {
+                                if (rowCtrl % itemsPerRow == 0)
+                                {
+                                    @:<div class="row">
+                                    }
+                                <div class="col-md-4">
+                                    <div class="single-buaa">
+                                        <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
+                                        <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
+                                    </div>
+                                </div>
+                                if (rowCtrl % itemsPerRow == itemsPerRow - 1)
+                                {
+                                    @:</div>
+                                    }
+                                rowCtrl++;
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 
