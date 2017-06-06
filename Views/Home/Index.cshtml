@@ -1,9 +1,18 @@
+﻿<<<<<<< HEAD
 ﻿@model List<News>
 
 @{
     ViewData["Title"] = "��ҳ";
     string Title = "��ҳ";
     Layout = null;
+=======
+@model List<News>
+
+@{
+    ViewData["Title"] = "��ҳ";
+    string Title = "��ҳ";
+    Layout = "_Layout";
+>>>>>>> remote-origin/master
 
     var BUAAList = Model.Where(n => n.UniversityName == "BUAA");
     var THUList = Model.Where(n => n.UniversityName == "THU");
@@ -11,6 +20,7 @@
     var RUCList = Model.Where(n => n.UniversityName == "RUC");
 }
 
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -396,3 +406,103 @@
             </div>
         }
     </div>*@
+=======
+
+
+@*<style type="text/css">
+    .row {
+        overflow: hidden;
+    }
+    .div [class*="col-"] {
+        margin-bottom: -99999px;
+        padding-bottom: 99999px;
+    }
+</style>*@
+
+<h2>@Title</h2>
+
+<!--����-->
+<div class="row" style="background-image: url(~/images/mainPage/buaa_bg.png);background-size: 100%;position: relative;">
+    <!--<img alt="Bootstrap Image Preview" src="~/images/mainPage/buaa_bg.jpg">
+    -->
+    <!--ѧУlogo-->
+    <div class="img-rounded" style="position: absolute, top:0,left:0">
+        <img src="~/images/mainPage/buaa_logo.jpg" class="img-rounded" style="width: 120px;height: 120px;padding: 15px;" />
+    </div>
+    <!--��������-->
+    @foreach (var item in BUAAList)
+    {
+        <div class="col-md-4">
+            <div class="news_image" style="float: left;">
+                <img src="@item.PictureUrl" class="img-rounded" width="80%"/>
+            </div>
+            <div class="news_info" style="float: left; width: 80%;">
+                <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
+            </div>
+        </div>
+    }
+</div>
+<!--�廪-->
+<div class="row" style="background-image: url(~/images/mainPage/thu_bg.png);background-size: 100%;position: relative;">
+    <!--<img alt="Bootstrap Image Preview" src="~/images/mainPage/buaa_bg.jpg">
+    -->
+    <!--ѧУlogo-->
+    <div class="img-rounded" style="position: absolute, top:0,left:0">
+        <img src="~/images/mainPage/thu_logo.png" class="img-rounded" style="width: 120px;height: 120px;padding: 15px;" />
+    </div>
+    <!--��������-->
+    @foreach (var item in THUList)
+    {
+        <div class="col-md-4">
+            <div class="news_image" style="float: left;">
+                <img src="@item.PictureUrl" class="img-rounded" width="80%" />
+            </div>
+            <div class="news_info" style="float: left; width: 80%;">
+                <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
+            </div>
+        </div>
+    }
+</div>
+<!--����-->
+<div class="row" style="background-image: url(~/images/mainPage/pku_bg.png);background-size: 100%;position: relative;">
+    <!--<img alt="Bootstrap Image Preview" src="~/images/mainPage/buaa_bg.jpg">
+    -->
+    <!--ѧУlogo-->
+    <div class="img-rounded" style="position: absolute, top:0,left:0">
+        <img src="~/images/mainPage/pku_logo.png" class="img-rounded" style="width: 120px;height: 120px;padding: 15px;" />
+    </div>
+    <!--��������-->
+    @foreach (var item in PKUList)
+    {
+        <div class="col-md-4">
+            <div class="news_image" style="float: left;">
+                <img src="@item.PictureUrl" class="img-rounded" width="80%" />
+            </div>
+            <div class="news_info" style="float: left; width: 80%;">
+                <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
+            </div>
+        </div>
+    }
+</div>
+<!--�˴�-->
+<div class="row" style="background-image: url(~/images/mainPage/ruc_bg.png);background-size: 100%;position: relative;">
+    <!--<img alt="Bootstrap Image Preview" src="~/images/mainPage/buaa_bg.jpg">
+    -->
+    <!--ѧУlogo-->
+    <div class="img-rounded" style="position: absolute, top:0,left:0">
+        <img src="~/images/mainPage/ruc_logo.png" class="img-rounded" style="width: 120px;height: 120px;padding: 15px;" />
+    </div>
+    <!--��������-->
+    @foreach (var item in RUCList)
+    {
+        <div class="col-md-4">
+            <div class="news_image" style="float: left;">
+                <img src="@item.PictureUrl" class="img-rounded" width="80%" />
+            </div>
+            <div class="news_info" style="float: left; width: 80%;">
+                <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
+            </div>
+        </div>
+    }
+</div>
+>>>>>>> remote-origin/master
