@@ -1,4 +1,7 @@
 ﻿@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
+@{ 
+    string SiteName = "大学新闻汇总";
+}
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +33,7 @@
                     <span class="icon-bar"></span>*@
                 </button>
                 @*TODO: ���asp-controller Ҫ��*@
-                <a asp-area="" asp-controller="News" asp-action="Index" class="navbar-brand">UniversityNews</a>
+                <a asp-area="" asp-controller="News" asp-action="Index" class="navbar-brand">@SiteName</a>
             </div>
             <div class="navbar-collapse collapse">
                 @*<ul class="nav navbar-nav">

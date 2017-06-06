@@ -1,8 +1,6 @@
 @model List<News>
-
 @{
-    ViewData["Title"] = "Ö÷Ò³";
-    string Title = "Ö÷Ò³";
+    ViewData["Title"] = "Index";
     Layout = "_Layout";
 
     var BUAAList = Model.Where(n => n.UniversityName == "BUAA");
@@ -11,19 +9,12 @@
     var RUCList = Model.Where(n => n.UniversityName == "RUC");
 }
 
+<h2>History Page</h2>
 
-
-@*<style type="text/css">
-    .row {
-        overflow: hidden;
-    }
-    .div [class*="col-"] {
-        margin-bottom: -99999px;
-        padding-bottom: 99999px;
-    }
-</style>*@
-
-<h2>@Title</h2>
+<form asp-action="Index">
+    Date: <input type="date" name="dt"/>
+    <input type="submit" value="Submit" />
+</form>
 
 <!--±±º½-->
 <div class="row" style="background-image: url(~/images/mainPage/buaa_bg.png);background-size: 100%;position: relative;">
@@ -38,7 +29,7 @@
     {
         <div class="col-md-4">
             <div class="news_image" style="float: left;">
-                <img src="@item.PictureUrl" class="img-rounded" width="80%"/>
+                <img src="@item.PictureUrl" class="img-rounded" width="80%" />
             </div>
             <div class="news_info" style="float: left; width: 80%;">
                 <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
@@ -109,3 +100,4 @@
         </div>
     }
 </div>
+

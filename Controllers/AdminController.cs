@@ -24,54 +24,19 @@ namespace UniversityNews_aNewTry.Controllers
             return View();
         }
 
-        public IActionResult EditBUAA()
+        public async Task<IActionResult> EditBUAA()
         {
             ViewData["UniName"] = "BUAA";
-            var list = context.News.Where(n => n.UniversityName == "BUAA").ToList();
-            //list.Sort((a, b) =>
-            //{
-            //    if ((a.IsPublished ?? false) == false &&
-            //        (b.IsPublished ?? false) == true)
-            //    {
-            //        return 1;
-            //    }
-            //    else if ((a.IsPublished ?? false) == true
-            //            && (b.IsPublished ?? false) == false)
-            //    {
-            //        return -1;
-            //    }
-            //    else
-            //    {
-            //        return 0;
-            //    }
-            //});
-            return View("Edit", list);
-        }
-
-        public IActionResult EditPKU()
-        {
-            ViewData["UniName"] = "PKU";
-            var list = context.News.Where(n => n.UniversityName == "PKU").ToList();
-            //list.Sort((a, b) =>
-            //{
-            //    var aOrigVal = a.OriginalDate != null ? aOrigVal : DateTime.MinValue;
-            //});
-            return View("Edit", list);
-        }
-
-        public IActionResult EditTHU()
-        {
-            ViewData["UniName"] = "THU";
-            var list = context.News.Where(n => n.UniversityName == "THU").ToList();
+            var list = await context.News.Where(n => n.UniversityName == "BUAA").ToListAsync();
             list.Sort((a, b) =>
             {
-                if ((a.IsPublished ?? false) == false &&
-                    (b.IsPublished ?? false) == true)
+                var aOrigDate = a.OriginalDate ?? DateTime.MinValue;
+                var bOrigDate = b.OriginalDate ?? DateTime.MinValue;
+                if (aOrigDate < bOrigDate)
                 {
                     return 1;
                 }
-                else if ((a.IsPublished ?? false) == true
-                        && (b.IsPublished ?? false) == false)
+                else if (aOrigDate > bOrigDate)
                 {
                     return -1;
                 }
@@ -83,19 +48,67 @@ namespace UniversityNews_aNewTry.Controllers
             return View("Edit", list);
         }
 
-        public IActionResult EditCCMU()
+        public async Task<IActionResult> EditPKU()
         {
-            ViewData["UniName"] = "CCMU";
-            var list = context.News.Where(n => n.UniversityName == "CCMU").ToList();
+            ViewData["UniName"] = "PKU";
+            var list = await context.News.Where(n => n.UniversityName == "PKU").ToListAsync();
             list.Sort((a, b) =>
             {
-                if ((a.IsPublished ?? false) == false &&
-                    (b.IsPublished ?? false) == true)
+                var aOrigDate = a.OriginalDate ?? DateTime.MinValue;
+                var bOrigDate = b.OriginalDate ?? DateTime.MinValue;
+                if (aOrigDate < bOrigDate)
                 {
                     return 1;
                 }
-                else if ((a.IsPublished ?? false) == true
-                        && (b.IsPublished ?? false) == false)
+                else if (aOrigDate > bOrigDate)
+                {
+                    return -1;
+                }
+                else
+                {
+                    return 0;
+                }
+            });
+            return View("Edit", list);
+        }
+
+        public async Task<IActionResult> EditTHU()
+        {
+            ViewData["UniName"] = "THU";
+            var list = await context.News.Where(n => n.UniversityName == "THU").ToListAsync();
+            list.Sort((a, b) =>
+            {
+                var aOrigDate = a.OriginalDate ?? DateTime.MinValue;
+                var bOrigDate = b.OriginalDate ?? DateTime.MinValue;
+                if (aOrigDate < bOrigDate)
+                {
+                    return 1;
+                }
+                else if (aOrigDate > bOrigDate)
+                {
+                    return -1;
+                }
+                else
+                {
+                    return 0;
+                }
+            });
+            return View("Edit", list);
+        }
+
+        public async Task<IActionResult> EditRUC()
+        {
+            ViewData["UniName"] = "RUC";
+            var list = await context.News.Where(n => n.UniversityName == "RUC").ToListAsync();
+            list.Sort((a, b) =>
+            {
+                var aOrigDate = a.OriginalDate ?? DateTime.MinValue;
+                var bOrigDate = b.OriginalDate ?? DateTime.MinValue;
+                if (aOrigDate < bOrigDate)
+                {
+                    return 1;
+                }
+                else if (aOrigDate > bOrigDate)
                 {
                     return -1;
                 }
@@ -120,7 +133,7 @@ namespace UniversityNews_aNewTry.Controllers
                 return NotFound();
             }
 
-            if ( news.IsPublished ?? false )
+            if (news.IsPublished ?? false)
             {
                 news.IsPublished = false;
                 news.PublishDate = null;
@@ -134,7 +147,7 @@ namespace UniversityNews_aNewTry.Controllers
             try
             {
                 context.Update(news);
-                context.SaveChanges();
+                await context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException duce)
             {
@@ -158,15 +171,24 @@ namespace UniversityNews_aNewTry.Controllers
             {
                 return RedirectToAction("EditTHU");
             }
-            else if (news.UniversityName == "CCMU")
+            else if (news.UniversityName == "RUC")
             {
-                return RedirectToAction("EditCCMU");
+                return RedirectToAction("EditRUC");
             }
             else
             {
                 return NotFound();
             }
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Publish( News news )
+        {
+            Console.WriteLine("hhhhh");
+            return RedirectToAction("EditBUAA");
+        }
+
+
 
         private bool NewsExists(string id)
         {

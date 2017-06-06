@@ -32,6 +32,7 @@
     <Folder Include="Views\Home\" />
     <Folder Include="Views\Account\" />
     <Folder Include="Views\Home\" />
+    <Folder Include="Views\History\" />
   </ItemGroup>
 
 </Project>
