@@ -303,7 +303,7 @@ img.UniLogo
 #date_picker
 {
     background-color: #0B81A5;
-    background-image: url("../images/date_picker.jpg");
+    background-image: url(../images/date_picker.jpg);
     background-position: center bottom;
     background-size: contain;
     background-repeat: no-repeat;
