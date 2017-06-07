@@ -11,18 +11,60 @@
     const int itemsPerRow = 3;
 }
 
-<div class="date_form">
-    <div style="height: 100px">
-
-    </div>
-    <form asp-action="Index" role="form">
-        <div class="form-group" style="color:black; margin-left:60px">
-            <label for="date"><font size="6">Date</font></label>
-            <input type="date" name="dt" />
-            <input type="submit" value="Submit" />
+<section id="home">
+    <div id="main-slider" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active">
+                <img class="img-responsive" src="~/images/date.jpg" alt="slider">
+            </div>
         </div>
-    </form>
-</div>
+    </div>
+</section>
+<section id="date_picker">
+    <div class="container">
+        <div class="row">
+            <div class="watch">
+                <img class="img-responsive" src="images/watch.png" alt="">
+            </div>
+            <div class="col-md-4 col-md-offset-2 col-sm-5">
+                 <h2>Pick A Date</h2>
+            </div>
+            <div class="col-sm-7 col-md-6">
+                <form asp-action="Index" role="form">
+                    <div class="form-group" style="color:black; margin-left:60px">
+                        <ul id="submit_form">
+                            <li>
+                                <label for="date"><font size="6"></font></label>
+                                <input type="date" class="form-control" name="dt" />
+                                <br />
+                                @*<input type="submit" class="form-control" value="Submit" />*@
+                                <button class="btn btn-primary" type="submit">Submit</button>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section><!--/#explore-->
+@*<section id="date_form">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7 col-md-6">
+                <form asp-action="Index" role="form">
+                    <div class="form-group" style="color:black; margin-left:60px">
+                        <label for="date"><font size="6">Date</font></label>
+                        <input type="date" name="dt" />
+                        <input type="submit" value="Submit" />
+                    </div>
+                </form>
+            </div>		
+        </div>
+    </div>
+</section>*@
+
 
 <section id="buaa">
     <div class="container">
