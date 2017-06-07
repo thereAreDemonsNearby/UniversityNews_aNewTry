@@ -5135,7 +5135,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Design/1.1.1": {
-      "sha512": "LIxaUJpAJLVCTg8aZ+ahbhdYDjdNDlUl5KSeBMhqnmRqLXwj6hQW1mgie7acK+hujTG0TL6BYYs+y1NoDx14ZA==",
+      "sha512": "xFeAAi9LUckgeinjji7WPMwPUbZNb6mTVRhWAlo+RVsjpnEjeAQk3Gw4OP3Ln/yncji64J7e74ue+yIArQYt+Q==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.design/1.1.1",
       "files": [
@@ -5161,7 +5161,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Relational.Design/1.1.1": {
-      "sha512": "jHTC964HcGYVGGYOmnt5+7rgNseyj9sV/eIJq5z5mI/IVftpap4CPpFmEntP3IeaQkarNIWNhJGkN5SDiCUa/g==",
+      "sha512": "WZKmQwuDUTLtjhxT/6c3hiMJTwi8OBl9rsPljY/ZhcMFAsF8sLj4uVrpkuNmrg5DEK2dEtnQn6p+Y9miQiIeZw==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.relational.design/1.1.1",
       "files": [
@@ -5200,7 +5200,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Tools/1.1.0": {
-      "sha512": "BjmhSQSjqPNvV9CThhlDFqYIGGSJsz9jAdMa3A0whPBlyuDnd2MDhL4xzNp2kq2Xs+PBLLLWVbny3g1ZILAclQ==",
+      "sha512": "kv9dPI7bvRuBPm3Ot2dfN/ptQJyoMaCMJMbgSC06NSNtdL5KffFmrCoEB0KlDhDoYA1fEG6nd+a2zh7uNTxFcQ==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.tools/1.1.0",
       "files": [
@@ -6002,7 +6002,7 @@
       ]
     },
     "Remotion.Linq/2.1.1": {
-      "sha512": "M9OwklxAVvVpKG6gXWSzrjtzo8egoYKaf5DEaYQqxJcR5nW4as06DQ5YTAKSqa1DJe13XnBU+DvT64ki8ty6jw==",
+      "sha512": "IJn0BqkvwEDpP+2qjvci7n4/a9f7DhKESLWb2/uG4xQh3rTkGTBUz69bI4IivCoKkTFAqjXxYDZw2K/npohjsw==",
       "type": "package",
       "path": "remotion.linq/2.1.1",
       "files": [
@@ -6807,7 +6807,7 @@
       ]
     },
     "System.Data.Common/4.3.0": {
-      "sha512": "dl4w+FvgGTCEF/vMTqQo2t5WF7pRkuG2at+e3KinNMGHiQ4OqeY6NT842/9b+tIQ100XbwsJb0Wmd61ngJ22NA==",
+      "sha512": "lm6E3T5u7BOuEH0u18JpbJHxBfOJPuCyl4Kg1RH10ktYLp5uEEE1xKrHW56/We4SnZpGAuCc9N0MJpSDhTHZGQ==",
       "type": "package",
       "path": "system.data.common/4.3.0",
       "files": [
@@ -7538,7 +7538,7 @@
       ]
     },
     "System.Interactive.Async/3.0.0": {
-      "sha512": "5q4gn9JLj0qq5oN+0ITzbP7+SPlA7spMXEF+MR7lTbLhuk4or/7g+fYEfmIaTfihYVlMGkj7kZTtXaDxtHEKgg==",
+      "sha512": "iyrgkZz9Dzm0fiPouQszFC3SO/46k6AYd/jG9bu+/o0AoDMaRXtlo3TIuWVNtOuJFd1noL963QouroJ0T3rImw==",
       "type": "package",
       "path": "system.interactive.async/3.0.0",
       "files": [
@@ -10986,15 +10986,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lenovo\\.nuget\\packages\\": {}
+    "C:\\Users\\Pasha\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\codes\\classProject\\UniversityNews_aNewTry\\UniversityNews_aNewTry.csproj",
+      "projectUniqueName": "G:\\Github\\UniversityNews_aNewTry\\UniversityNews_aNewTry.csproj",
       "projectName": "UniversityNews_aNewTry",
-      "projectPath": "D:\\codes\\classProject\\UniversityNews_aNewTry\\UniversityNews_aNewTry.csproj",
-      "outputPath": "D:\\codes\\classProject\\UniversityNews_aNewTry\\obj\\",
+      "projectPath": "G:\\Github\\UniversityNews_aNewTry\\UniversityNews_aNewTry.csproj",
+      "outputPath": "G:\\Github\\UniversityNews_aNewTry\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
