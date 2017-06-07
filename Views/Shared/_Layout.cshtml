@@ -29,17 +29,17 @@
 <body>
     <!--/#header-->
     <header id="header" role="banner">
-        <div class="main-nav">
+        @*<div class="main-nav">
             <div class="container">
                 <div class="row">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" asp-controller="Home" asp-action="Index">
                             <img class="img-responsive" src="images/logo.png" alt="logo">
                         </a>
                     </div>
@@ -54,7 +54,33 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>*@
+        <nav class="navbar main-nav" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" style="background-color:#1B7B98" class ="navbar-toggle btn-primary" data-toggle="collapse" data-target="#shit-navbar-collapse" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                        @*<img class="img-responsive" src="images/logo.png" alt="logo">*@
+                        <font size="15" color="white">University News</font>
+                    </a>
+
+                </div>
+                <div class="collapse navbar-collapse" id="shit-navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="scroll"><a href="#buaa">BUAA</a></li>
+                        <li class="scroll"><a href="#thu">THU</a></li>
+                        <li class="scroll"><a href="#ruc">RUC</a></li>
+                        <li class="scroll"><a href="#pku">PKU</a></li>
+                        <li><a class="no-scroll" asp-controller="History" asp-action="Index">HISTORY</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
     @RenderBody();
     <!--/#footer-->

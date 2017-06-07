@@ -10,7 +10,8 @@ body
 {
     font-family: Calibri;
     font-size: 17px;
-    color: #fff
+    color: #fff;
+    background-image: url(../images/gezilv.jpg)
 }
 
 
@@ -80,10 +81,11 @@ h2
 
 .main-nav
 {
-    position: absolute;
+    /*position: absolute;*/
     width: 100%;
     z-index: 999;
 }
+
 
     .main-nav .container
     {
@@ -116,6 +118,13 @@ h2
 {
     color: #ec5538
 }
+
+/*.navbar-header {
+    background-color: #1B7B98;
+    height: 90px;
+    margin-bottom: 20px;
+    position: relative;
+}*/
 
 .navbar-brand
 {
@@ -303,7 +312,7 @@ img.UniLogo
 #date_picker
 {
     background-color: #0B81A5;
-    background-image: url("../images/date_picker.jpg");
+    background-image: url(../images/date_picker.jpg);
     background-position: center bottom;
     background-size: contain;
     background-repeat: no-repeat;
