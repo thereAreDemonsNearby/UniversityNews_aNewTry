@@ -109,8 +109,8 @@
     }
 
 
-  
-    
+
+
 
 
 
@@ -142,3 +142,54 @@ img.UniversityLogo
     {
         color: #000000
     }
+
+/*************************
+*******Date Form CSS******
+**************************/
+#date_form
+{
+    background-color: #fff;
+    background-position: 50% 0;
+    background-size: contain;
+    position: relative;
+    background-repeat: no-repeat;
+    height: 300px;
+}
+
+/*************************
+*******DatePicker CSS******
+**************************/
+
+#date_picker
+{
+    background-color: #0B81A5;
+    background-image: url(../img/date_picker.jpg);
+    background-position: center bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    padding: 130px 0 100px;
+}
+
+.watch
+{
+    position: absolute;
+    left: 0px;
+}
+
+#date_picker h2
+{
+    color: white;
+    font-size: 42px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#submit_form
+{
+    display: block;
+    overflow: hidden;
+    text-align: center;
+    padding: 0
+}
