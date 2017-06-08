@@ -14,62 +14,34 @@
     background-repeat: no-repeat;
 }
 
-    #buaa h2
-    {
-        color: #FFFFFF;
-        font-size: 36px;
-        font-weight: 300;
-        margin-bottom: 40px;
-        margin-top: 70px;
-        text-transform: uppercase;
-    }
+#buaa h2
+{
+    color: #FFFFFF;
+    font-size: 36px;
+    font-weight: 300;
+    margin-bottom: 40px;
+    margin-top: 70px;
+    text-transform: uppercase;
+}
 
 .single-buaa
 {
     margin-bottom: 70px;
 }
 
-    .single-buaa h4
-    {
-        color: black;
-        font-size: 24px;
-        font-weight: 300;
-        line-height: 26px;
-        margin-top: 25px;
-        text-transform: uppercase;
-    }
-
-
-    .single-buaa h5
-    {
-        font-size: 18px;
-        font-weight: 100;
-        display: block;
-    }
-
-#buaa-carousel
+.single-buaa h4
 {
-    position: relative;
-}
-
-.buaa-control-left,
-.buaa-control-right
-{
-    position: absolute;
+    color: black;
     font-size: 24px;
-    color: #fff;
-    top: 0;
+    font-weight: 300;
+    line-height: 26px;
+    margin-top: 25px;
+    text-transform: uppercase;
 }
 
-.buaa-control-left
-{
-    right: 3%
-}
 
-.buaa-control-right
-{
-    right: 0;
-}
+
+
 
 /*************************
 ******Logo CSS****
