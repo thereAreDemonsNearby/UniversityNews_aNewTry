@@ -177,7 +177,10 @@
                 <div class="full-bg-img flex-center white-text">
                     <ul class="animated fadeInUp col-md-12">
                         <li>
-                            <a target="_blank" href="http://mdbootstrap.com/forums/forum/support/" class="btn btn-default btn-lg" rel="nofollow">中共中央第二党校</a>
+                            <a target="_blank" href="http://news.ruc.edu.cn/archives/category/important_news" class="btn btn-default btn-lg" rel="nofollow">中共中央第二党校</a>
+                        </li>
+                        <li>
+                            <p class="flex-item">实事求是</p>
                         </li>
                     </ul>
                 </div>
@@ -311,6 +314,52 @@
         </div>
     </section>
     <!--/.THU News-->
+
+    <!--RUC News-->
+    <section id="ruc">
+        <div class="container">
+
+            <!--Page heading-->
+            <div>
+                <br />
+            </div>
+            <div class="row wow fadeIn" data-wow-delay="0.2s">
+                <div class="col-md-12">
+                    <img class="UniversityLogo" src="~/img/ruc_logo.png" />
+                </div>
+            </div>
+            <!--/.Page heading-->
+            <hr>
+            @foreach (var item in RUCList)
+            {
+            <!--First row-->
+                <div class="row wow fadeIn" data-wow-delay="0.2s">
+                    <!--Featured image-->
+                    <div class="col-lg-7">
+                        <div class="view overlay hm-white-light z-depth-1-half">
+                            <img src="@item.PictureUrl" class="img-fluid" alt="">
+                            <div class="mask"></div>
+                        </div>
+                    </div>
+                    <!--/.Featured image-->
+                    <!--Post excerpt-->
+                    <div class="col-lg-5">
+                        <h2 class="post-title">@(((DateTime)item.OriginalDate).Month)月@(((DateTime)item.OriginalDate).Day)日</h2>
+                        <p class="lead">@item.Title</p>
+                        <div class="read-more">
+                            <a href="@item.NewsUrl" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                    <!--/.Post excerpt-->
+                </div>
+            <!--/.First row-->
+                <hr class="extra-margin">
+
+            }
+        </div>
+    </section>
+    <!--/.RUC News-->
+
     <!--PKU News-->
     <section id="pku">
         <div class="container">

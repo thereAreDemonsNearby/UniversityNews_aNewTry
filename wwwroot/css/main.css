@@ -56,6 +56,32 @@
     }
 
 /*************************
+*******RUC CSS******
+**************************/
+#ruc
+{
+    background-color: #efe9d1;
+    background-image: url("../img/ruc_bg.jpg");
+    background-position: 50% 0;
+    background-size: contain;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+    #ruc h2
+    {
+        color: #000000;
+        font-size: 36px;
+        font-weight: 300;
+        margin-bottom: 40px;
+        margin-top: 70px;
+    }
+
+    #ruc p
+    {
+        color: #000000;
+    }
+/*************************
 *******PKU CSS******
 **************************/
 #pku
