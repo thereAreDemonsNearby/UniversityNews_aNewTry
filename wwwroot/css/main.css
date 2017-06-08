@@ -14,15 +14,15 @@
     background-repeat: no-repeat;
 }
 
-#buaa h2
-{
-    color: #FFFFFF;
-    font-size: 36px;
-    font-weight: 300;
-    margin-bottom: 40px;
-    margin-top: 70px;
-    text-transform: uppercase;
-}
+    #buaa h2
+    {
+        color: #292b2c;
+        font-size: 36px;
+        font-weight: 300;
+        margin-bottom: 40px;
+        margin-top: 70px;
+        text-transform: uppercase;
+    }
 
 .single-buaa
 {
