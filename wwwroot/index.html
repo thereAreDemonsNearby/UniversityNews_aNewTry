@@ -1,19 +1,4 @@
-﻿@model List<News>
-
-@{
-    ViewData["Title"] = "��ҳ";
-    string Title = "��ҳ";
-    Layout = null;
-
-    var BUAAList = Model.Where(n => n.UniversityName == "BUAA");
-    var THUList = Model.Where(n => n.UniversityName == "THU");
-    var PKUList = Model.Where(n => n.UniversityName == "PKU");
-    var RUCList = Model.Where(n => n.UniversityName == "RUC");
-    int rowCtrl;
-    const int itemsPerRow = 3;
-}
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -69,7 +54,13 @@
             margin-top: 0;
         }
 
-
+        /*@media only screen and (max-width: 768px)
+        {
+            .navbar
+            {
+                background-color: #1C2331;
+            }
+        }*/
         /* Carousel*/
 
         .carousel,
@@ -89,6 +80,20 @@
         {
             color: #fff;
         }
+
+        /*@media (min-width: 776px)
+        {
+            .carousel .view ul li
+            {
+                display: inline;
+            }
+
+            .carousel .view .full-bg-img ul li .flex-item
+            {
+                margin-bottom: 1.5rem;
+            }
+        }*/
+
     </style>
 
     <!-- Main styles -->
@@ -175,6 +180,7 @@
 
             </div>
             <!-- /.Third slide -->
+
             <!-- Fourth slide -->
             <div class="carousel-item view hm-black-light" style="background-image: url('img/pku.jpg'); background-repeat: no-repeat; background-size: cover;">
 
@@ -205,68 +211,32 @@
     </div>
     <!--/.Carousel Wrapper-->
     <!--/.Main layout-->
+
     <!--BUAA News-->
     <section id="buaa">
         <div class="container">
             <div class="row">
-                 <img class="UniversityLogo" src="img/buaa_logo.jpg" />
+                <div class="col-sm-12 col-md-9">
+                    <div id="buaa-carousel" class="carousel slide" data-interval="false">
+                        <img src="img/buaa_logo.jpg"/>
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="col-md-4">
+                                    <div class="single-buaa">
+                                        <img class="img-responsive" src=" 
+http://news.buaa.edu.cn/images/content/2017-06/20170607171149508948.jpg ">
+                                        <a href=""><h4>北航共青团学习贯彻全国高校共青团思想政治工作会议精神 </h4></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
-    <!--Work-->
-    <div class="section scrollspy" id="work">
-        <div class="container">
-            <div class="row">
-                <div class="col s12 m4 l4">
-                    <div class="card">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator" src="img/project1.jpg">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">Project Title <i class="mdi-navigation-more-vert right"></i></span>
-                            <p><a href="#">Project link</a></p>
-                        </div>
-                        <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">Project Title <i class="mdi-navigation-close right"></i></span>
-                            <p>Here is some more information about this project that is only revealed once clicked on.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m4 l4">
-                    <div class="card">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator" src="img/project2.jpeg">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">Project Title <i class="mdi-navigation-more-vert right"></i></span>
-                            <p><a href="#">Project link</a></p>
-                        </div>
-                        <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">Project Title <i class="mdi-navigation-close right"></i></span>
-                            <p>Here is some more information about this project that is only revealed once clicked on.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m4 l4">
-                    <div class="card">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator" src="img/project3.png">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">Project Title <i class="mdi-navigation-more-vert right"></i></span>
-                            <p><a href="#">Project link</a></p>
-                        </div>
-                        <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">Project Title <i class="mdi-navigation-close right"></i></span>
-                            <p>Here is some more information about this project that is only revealed once clicked on.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <!--/.BUAA News-->
+
     <!--Footer-->
     <footer id="footer">
         <div class="container">
@@ -276,6 +246,7 @@
         </div>
     </footer>
     <!--/.Footer-->
+
     <!-- SCRIPTS -->
     <!-- JQuery -->
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
