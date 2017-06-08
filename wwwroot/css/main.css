@@ -21,7 +21,6 @@
         font-weight: 300;
         margin-bottom: 40px;
         margin-top: 70px;
-        text-transform: uppercase;
     }
 
 .single-buaa
@@ -29,17 +28,41 @@
     margin-bottom: 70px;
 }
 
-.single-buaa h4
+ 
+
+/*************************
+*******PKU CSS******
+**************************/
+#pku
 {
-    color: black;
-    font-size: 24px;
-    font-weight: 300;
-    line-height: 26px;
-    margin-top: 25px;
-    text-transform: uppercase;
+    background-color: #c44c34;
+    background-image: url("../img/pku_bg.jpg");
+    background-position: 50% 0;
+    background-size: contain;
+    position: relative;
+    background-repeat: no-repeat;
 }
 
+    #pku h2
+    {
+        color: #ffffff;
+        font-size: 36px;
+        font-weight: 300;
+        margin-bottom: 40px;
+        margin-top: 70px;
+    }
 
+    #pku p
+    {
+        color: #ffffff;
+    }
+.single-pku
+{
+    margin-bottom: 70px;
+}
+
+  
+    
 
 
 
