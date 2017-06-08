@@ -1,7 +1,7 @@
-@model List<News>
+﻿@model List<News>
 @{
     ViewData["Title"] = "Index";
-    Layout = "_Layout";
+    Layout = null;
 
     var BUAAList = Model.Where(n => n.UniversityName == "BUAA");
     var THUList = Model.Where(n => n.UniversityName == "THU");
@@ -11,263 +11,349 @@
     const int itemsPerRow = 3;
 }
 
-<section id="home">
-    <div id="main-slider" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-        </ol>
-        <div class="carousel-inner">
-            <div class="item active">
-                <img class="img-responsive" src="~/images/date.jpg" alt="slider">
-            </div>
-        </div>
-    </div>
-</section>
-<section id="date_picker">
-    <div class="container">
-        <div class="row">
-            <div class="watch">
-                <img class="img-responsive" src="images/watch.png" alt="">
-            </div>
-            <div class="col-md-4 col-md-offset-2 col-sm-5">
-                 <h2>Pick A Date</h2>
-            </div>
-            <div class="col-sm-7 col-md-6">
-                <form asp-action="Index" role="form">
-                    <div class="form-group" style="color:black; margin-left:60px">
-                        <ul id="submit_form">
-                            <li>
-                                <label for="date"><font size="6"></font></label>
-                                <input type="date" class="form-control" name="dt" />
-                                <br />
-                                @*<input type="submit" class="form-control" value="Submit" />*@
-                                <button class="btn btn-primary" type="submit">Submit</button>
-                            </li>
-                        </ul>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</section><!--/#explore-->
-@*<section id="date_form">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-7 col-md-6">
-                <form asp-action="Index" role="form">
-                    <div class="form-group" style="color:black; margin-left:60px">
-                        <label for="date"><font size="6">Date</font></label>
-                        <input type="date" name="dt" />
-                        <input type="submit" value="Submit" />
-                    </div>
-                </form>
-            </div>		
-        </div>
-    </div>
-</section>*@
 
 
-<section id="buaa">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-md-9">
-                <div id="buaa-carousel" class="carousel slide" data-interval="false">
-                    @*<h2 class="heading">BUAA News</h2>*@
-                    <img class="UniLogo" src="~/images/mainPage/buaa_logo.jpg" />
-                    @*<a class="buaa-control-left" href="#buaa-carousel" data-slide="prev"><i class="fa fa-angle-left"></i></a>
-                        <a class="buaa-control-right" href="#buaa-carousel" data-slide="next"><i class="fa fa-angle-right"></i></a>*@
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            @*<div class="row">
-                                    @foreach (var item in BUAAList)
-                                    {
-                                        <div class="col-md-4">
-                                            <div class="single-buaa">
-                                                <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
-                                                <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
-                                            </div>
-                                        </div>
-                                    }
-                                </div>*@
-                            @{
-                                rowCtrl = 0;
-                            }
-                            @foreach (var item in BUAAList)
-                            {
-                                if (rowCtrl % itemsPerRow == 0)
-                                {
-                                    @:<div class="row">
-                                    }
-                                <div class="col-md-4">
-                                    <div class="single-buaa">
-                                        <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
-                                        <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
-                                    </div>
-                                </div>
-                                if (rowCtrl % itemsPerRow == itemsPerRow - 1)
-                                {
-                                    @:</div>
-                                    }
-                                rowCtrl++;
-                            }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>UniversityNews</title>
+
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+
+    <!-- Template styles -->
+    <style rel="stylesheet">
+        /* TEMPLATE STYLES */
+        /* Necessary for full page carousel*/
+
+        html,
+        body,
+        .view
+        {
+            height: 100%;
+        }
+        /* Navigation*/
+
+        .navbar
+        {
+            background-color: transparent;
+        }
+
+        .scrolling-navbar
+        {
+            -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+            -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+            transition: background .5s ease-in-out, padding .5s ease-in-out;
+        }
+
+        .top-nav-collapse
+        {
+            background-color: #1C2331;
+        }
+
+        footer.page-footer
+        {
+            background-color: #1C2331;
+            margin-top: 0;
+        }
+
+
+        /* Carousel*/
+
+        .carousel,
+        .carousel-item,
+        .active
+        {
+            height: 100%;
+        }
+
+        .carousel-inner
+        {
+            height: 100%;
+        }
+        /*Caption*/
+
+        .flex-center
+        {
+            color: #fff;
+        }
+    </style>
+
+    <!-- Main styles -->
+    <link href="css/main.css" rel="stylesheet">
+    <link href="min/custom-min.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <section id="date_picker">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-2 col-sm-5">
+                    <h2>选择一个日期</h2>
+                </div>
+                <div class="col-sm-7 col-md-6">
+                    <form asp-action="Index" role="form">
+                        <div class="form-group" style="color:black; margin-left:60px">
+                            <ul id="submit_form">
+                                <li>
+                                    <label for="date"><font size="6"></font></label>
+                                    <input type="date" class="form-control" name="dt" />
+                                    <br />
+                                    @*<input type="submit" class="form-control" value="Submit" />*@
+                                    <button class="btn btn-primary" type="submit">提交</button>
+                                </li>
+                            </ul>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<!--/#thu-->
-<section id="thu">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-md-9">
-                <div id="thu-carousel" class="carousel slide" data-interval="false">
-                    @*<h2 class="heading">THU News</h2>*@
-                    <img class="UniLogo" src="~/images/mainPage/thu_logo.png" />
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            @*<div class="row">
-                                    @foreach (var item in THUList)
-                                    {
-                                        <div class="col-md-4">
-                                            <div class="single-buaa">
-                                                <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
-                                                <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
-                                            </div>
-                                        </div>
-                                    }
-                                </div>*@
-                            @{
-                                rowCtrl = 0;
-                            }
-                            @foreach (var item in THUList)
-                            {
-                                if (rowCtrl % itemsPerRow == 0)
-                                {
-                                    @:<div class="row">
-                                    }
-                                <div class="col-md-4">
-                                    <div class="single-buaa">
-                                        <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
-                                        <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
-                                    </div>
-                                </div>
-                                if (rowCtrl % itemsPerRow == itemsPerRow - 1)
-                                {
-                                    @:</div>
-                                    }
-                                rowCtrl++;
-                            }
-                        </div>
-                    </div>
-                </div>
+    </section>
+    <!--Navbar-->
+    <nav class="navbar navbar-toggleable-md navbar-dark fixed-top scrolling-navbar">
+        <div class="container">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                <strong>UniversityNews</strong>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav1">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="History" asp-action="Index">History</a>
+                    </li>
+                </ul>
             </div>
         </div>
+    </nav>
+    <!--/.Navbar-->
+  
+    <!--/.Main layout-->
+    <div>
+        <br />
     </div>
-</section>
 
-<!--/#ruc-->
-<section id="ruc">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-md-9">
-                <div id="ruc-carousel" class="carousel slide" data-interval="false">
-                    @*<h2 class="heading">RUC News</h2>*@
-                    <img class="UniLogo" src="~/images/mainPage/ruc_logo.png" />
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            @*<div class="row">
-                                    @foreach (var item in RUCList)
-                                    {
-                                        <div class="col-md-4">
-                                            <div class="single-buaa">
-                                                <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
-                                                <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
-                                            </div>
-                                        </div>
-                                    }
-                                </div>*@
-                            @{
-                                rowCtrl = 0;
-                            }
-                            @foreach (var item in RUCList)
-                            {
-                                if (rowCtrl % itemsPerRow == 0)
-                                {
-                                    @:<div class="row">
-                                    }
-                                <div class="col-md-4">
-                                    <div class="single-buaa">
-                                        <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
-                                        <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
-                                    </div>
-                                </div>
-                                if (rowCtrl % itemsPerRow == itemsPerRow - 1)
-                                {
-                                    @:</div>
-                                    }
-                                rowCtrl++;
-                            }
-                        </div>
-                    </div>
 
+    
+    <!--BUAA News-->
+    <section id="buaa">
+        <div class="container">
+
+            <!--Page heading-->
+            <div>
+                <br />
+            </div>
+            <div class="row wow fadeIn" data-wow-delay="0.2s">
+                <div class="col-md-12">
+                    <img class="UniversityLogo" src="~/img/buaa_logo.jpg" />
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
-
-<!--/#pku-->
-<section id="pku">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-md-9">
-                <div id="pku-carousel" class="carousel slide" data-interval="false">
-                    @*<h2 class="heading">PKU News</h2>*@
-                    <img class="UniLogo" src="~/images/mainPage/pku_logo.png" />
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            @*<div class="row">
-                                    @foreach (var item in PKUList)
-                                    {
-                                        <div class="col-md-4">
-                                            <div class="single-buaa">
-                                                <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
-                                                <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
-                                            </div>
-                                        </div>
-                                    }
-                                </div>*@
-                            @{
-                                rowCtrl = 0;
-                            }
-                            @foreach (var item in PKUList)
-                            {
-                                if (rowCtrl % itemsPerRow == 0)
-                                {
-                                    @:<div class="row">
-                                    }
-                                <div class="col-md-4">
-                                    <div class="single-buaa">
-                                        <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
-                                        <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
-                                    </div>
-                                </div>
-                                if (rowCtrl % itemsPerRow == itemsPerRow - 1)
-                                {
-                                    @:</div>
-                                    }
-                                rowCtrl++;
-                            }
+            <!--/.Page heading-->
+            <hr>
+            @foreach (var item in BUAAList)
+            {
+            <!--First row-->
+                <div class="row wow fadeIn" data-wow-delay="0.2s">
+                    <!--Featured image-->
+                    <div class="col-lg-7">
+                        <div class="view overlay hm-white-light z-depth-1-half">
+                            <img src="@item.PictureUrl" class="img-fluid" alt="">
+                            <div class="mask"></div>
                         </div>
                     </div>
+                    <!--/.Featured image-->
+                    <!--Post excerpt-->
+                    <div class="col-lg-5">
+                        <h2 class="post-title">@(((DateTime)item.OriginalDate).Month)月@(((DateTime)item.OriginalDate).Day)日</h2>
+                        <p class="lead">@item.Title</p>
+                        <div class="read-more">
+                            <a href="@item.NewsUrl" class="btn btn-primary">阅读更多</a>
+                        </div>
+                    </div>
+                    <!--/.Post excerpt-->
+                </div>
+            <!--/.First row-->
+                <hr class="extra-margin">
+
+            }
+        </div>
+    </section>
+    <!--/.BUAA News-->
+    <!--THU News-->
+    <section id="thu">
+        <div class="container">
+
+            <!--Page heading-->
+            <div>
+                <br />
+            </div>
+            <div class="row wow fadeIn" data-wow-delay="0.2s">
+                <div class="col-md-12">
+                    <img class="UniversityLogo" src="~/img/thu_logo.png" />
                 </div>
             </div>
+            <!--/.Page heading-->
+            <hr>
+            @foreach (var item in THUList)
+            {
+            <!--First row-->
+                <div class="row wow fadeIn" data-wow-delay="0.2s">
+                    <!--Featured image-->
+                    <div class="col-lg-7">
+                        <div class="view overlay hm-white-light z-depth-1-half">
+                            <img src="@item.PictureUrl" class="img-fluid" alt="">
+                            <div class="mask"></div>
+                        </div>
+                    </div>
+                    <!--/.Featured image-->
+                    <!--Post excerpt-->
+                    <div class="col-lg-5">
+                        <h2 class="post-title">@(((DateTime)item.OriginalDate).Month)月@(((DateTime)item.OriginalDate).Day)日</h2>
+                        <p class="lead">@item.Title</p>
+                        <div class="read-more">
+                            <a href="@item.NewsUrl" class="btn btn-primary">阅读更多</a>
+                        </div>
+                    </div>
+                    <!--/.Post excerpt-->
+                </div>
+            <!--/.First row-->
+                <hr class="extra-margin">
+
+            }
         </div>
-    </div>
-</section>
+    </section>
+    <!--/.THU News-->
+    <!--RUC News-->
+    <section id="ruc">
+        <div class="container">
+
+            <!--Page heading-->
+            <div>
+                <br />
+            </div>
+            <div class="row wow fadeIn" data-wow-delay="0.2s">
+                <div class="col-md-12">
+                    <img class="UniversityLogo" src="~/img/ruc_logo.png" />
+                </div>
+            </div>
+            <!--/.Page heading-->
+            <hr>
+            @foreach (var item in RUCList)
+            {
+            <!--First row-->
+                <div class="row wow fadeIn" data-wow-delay="0.2s">
+                    <!--Featured image-->
+                    <div class="col-lg-7">
+                        <div class="view overlay hm-white-light z-depth-1-half">
+                            <img src="@item.PictureUrl" class="img-fluid" alt="">
+                            <div class="mask"></div>
+                        </div>
+                    </div>
+                    <!--/.Featured image-->
+                    <!--Post excerpt-->
+                    <div class="col-lg-5">
+                        <h2 class="post-title">@(((DateTime)item.OriginalDate).Month)月@(((DateTime)item.OriginalDate).Day)日</h2>
+                        <p class="lead">@item.Title</p>
+                        <div class="read-more">
+                            <a href="@item.NewsUrl" class="btn btn-primary">阅读更多</a>
+                        </div>
+                    </div>
+                    <!--/.Post excerpt-->
+                </div>
+            <!--/.First row-->
+                <hr class="extra-margin">
+
+            }
+        </div>
+    </section>
+    <!--/.RUC News-->
+    <!--PKU News-->
+    <section id="pku">
+        <div class="container">
+
+            <!--Page heading-->
+            <div>
+                <br />
+            </div>
+            <div class="row wow fadeIn" data-wow-delay="0.2s">
+                <div class="col-md-12">
+                    <img class="UniversityLogo" src="~/img/pku_logo.png" />
+                </div>
+            </div>
+            <!--/.Page heading-->
+            <hr>
+            @foreach (var item in PKUList)
+            {
+            <!--First row-->
+                <div class="row wow fadeIn" data-wow-delay="0.2s">
+                    <!--Featured image-->
+                    <div class="col-lg-7">
+                        <div class="view overlay hm-white-light z-depth-1-half">
+                            <img src="@item.PictureUrl" class="img-fluid" alt="">
+                            <div class="mask"></div>
+                        </div>
+                    </div>
+                    <!--/.Featured image-->
+                    <!--Post excerpt-->
+                    <div class="col-lg-5">
+                        <h2 class="post-title">@(((DateTime)item.OriginalDate).Month)月@(((DateTime)item.OriginalDate).Day)日</h2>
+                        <p class="lead">@item.Title</p>
+                        <div class="read-more">
+                            <a href="@item.NewsUrl" class="btn btn-primary">阅读更多</a>
+                        </div>
+                    </div>
+                    <!--/.Post excerpt-->
+                </div>
+            <!--/.First row-->
+                <hr class="extra-margin">
+
+            }
+        </div>
+    </section>
+    <!--/.PKU News-->
+    <!--Footer-->
+    <footer id="footer">
+        <div class="container">
+            <div class="text-center">
+                <p> Copyright  &copy;2017 <br> cszh </p>
+            </div>
+        </div>
+    </footer>
+    <!--/.Footer-->
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/tether.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+
+    <script>
+        new WOW().init();
+    </script>
+</body>
+
+</html>
 
 
 

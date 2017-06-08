@@ -1,296 +1,147 @@
 @import url(http://fonts.googleapis.com/css?family=Dosis:400,200,300,500,600,700,800);
 @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,200,700);
 
-
 /*************************
-*******Typography******
+*******BUAA CSS******
 **************************/
-
-body
+#buaa
 {
-    font-family: Calibri;
-    font-size: 17px;
-    color: #fff;
-    background-image: url(../images/gezilv.jpg)
-}
-
-
-.btn
-{
-    border-radius: 0;
-    font-family: Calibri;
-    font-size: 20px;
-    padding: 9px 23px;
-}
-
-a
-{
-    -webkit-transition: 300ms;
-    -moz-transition: 300ms;
-    -o-transition: 300ms;
-    transition: 300ms;
-}
-
-    a:focus,
-    a:hover
-    {
-        text-decoration: none;
-        outline: none
-    }
-
-h1, h2, h3, h4, h5, h6
-{
-    font-family: Calibri;
-    font-weight: 300;
-    text-transform: uppercase;
-}
-
-h2
-{
-    font-size: 36px
-}
-
-.navbar-toggle
-{
-    margin-top: 12px
-}
-
-    .navbar-toggle .icon-bar
-    {
-        background-color: #fff;
-    }
-
-    .navbar-toggle,
-    .navbar-toggle:focus
-    {
-        border: 1px solid #fff;
-        outline: none;
-    }
-
-
-/*************************
-*******Header CSS******
-**************************/
-
-.header-top
-{
-    display: block;
-    overflow: hidden;
-    padding: 25px;
-}
-
-.main-nav
-{
-    /*position: absolute;*/
-    width: 100%;
-    z-index: 999;
-}
-
-
-    .main-nav .container
-    {
-        width: 100%
-    }
-
-.social-icons a
-{
-    font-size: 18px;
-    color: #fff;
-    padding-left: 20px;
-}
-
-.social-icons .fa-facebook:hover
-{
-    color: #3B5997
-}
-
-.social-icons .fa-twitter:hover
-{
-    color: #29C5F6
-}
-
-.social-icons .fa-google-plus:hover
-{
-    color: #D13D2F
-}
-
-.social-icons .fa-youtube:hover
-{
-    color: #ec5538
-}
-
-/*.navbar-header {
-    background-color: #1B7B98;
-    height: 90px;
-    margin-bottom: 20px;
+    background-color: #eee;
+    background-image: url("../img/buaa_bg.jpg");
+    background-position: 50% 0;
+    background-size: contain;
     position: relative;
-}*/
-
-.navbar-brand
-{
-    background-color: #1B7B98;
-    height: 90px;
-    margin-bottom: 20px;
-    position: relative;
-    width: 297px;
+    background-repeat: no-repeat;
 }
 
-    .navbar-brand img
+    #buaa h2
     {
-        position: absolute;
-        top: -35px;
-    }
-
-.navbar-right
-{
-    background-color: #1B7B98;
-    padding: 0 95px 0 0;
-    opacity: .9
-}
-
-    .navbar-right li a
-    {
-        padding: 35px 21px;
-        font-size: 22px;
-        color: #fff;
-        text-transform: uppercase;
-        font-family: Calibri;
+        color: #292b2c;
+        font-size: 36px;
         font-weight: 300;
+        margin-bottom: 40px;
+        margin-top: 70px;
     }
 
-        .navbar-right li a:hover,
-        .navbar-right li a:focus,
-        .navbar-right .active a
-        {
-            background-color: #fff;
-            color: #16728f
-        }
-
-
-.fixed-menu
+.single-buaa
 {
-    background-color: #1B7B98;
-    position: fixed;
-    top: 0;
+    margin-bottom: 70px;
 }
 
-    .fixed-menu .navbar-right
+/*************************
+*******THU CSS******
+**************************/
+#thu
+{
+    background-color: #75b372;
+    background-image: url("../img/thu_bg.jpg");
+    background-position: 50% 0;
+    background-size: contain;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+    #thu h2
     {
-        padding: 0;
+        color: #ffffff;
+        font-size: 36px;
+        font-weight: 300;
+        margin-bottom: 40px;
+        margin-top: 70px;
+    }
+
+    #thu p
+    {
+        color: #ffffff;
+    }
+
+/*************************
+*******RUC CSS******
+**************************/
+#ruc
+{
+    background-color: #efe9d1;
+    background-image: url("../img/ruc_bg.jpg");
+    background-position: 50% 0;
+    background-size: contain;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+    #ruc h2
+    {
+        color: #000000;
+        font-size: 36px;
+        font-weight: 300;
+        margin-bottom: 40px;
+        margin-top: 70px;
+    }
+
+    #ruc p
+    {
+        color: #000000;
+    }
+/*************************
+*******PKU CSS******
+**************************/
+#pku
+{
+    background-color: #c44c34;
+    background-image: url("../img/pku_bg.jpg");
+    background-position: 50% 0;
+    background-size: contain;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+    #pku h2
+    {
+        color: #ffffff;
+        font-size: 36px;
+        font-weight: 300;
+        margin-bottom: 40px;
+        margin-top: 70px;
+    }
+
+    #pku p
+    {
+        color: #ffffff;
     }
 
 
-        .fixed-menu .navbar-right li a
-        {
-            font-size: 18px;
-            padding: 20px 25px;
-            text-shadow: inherit;
-        }
 
-    .fixed-menu .navbar-brand
-    {
-        height: 60px;
-        margin-top: 0;
-        padding: 0;
-        margin-bottom: 0;
-        width: 125px;
-    }
 
-        .fixed-menu .navbar-brand img
-        {
-            height: 60px;
-            top: 0;
-        }
-
-    .fixed-menu .header-top
-    {
-        display: none;
-    }
 
 
 
 /*************************
-*******Home CSS******
+******Logo CSS****
 **************************/
-
-#home
-{
-    position: relative;
-    overflow: hidden;
-}
-
-#main-slider img
-{
-    width: 100%
-}
-
-#main-slider .carousel-caption
-{
-    background: none repeat scroll 0 0 #000000;
-    bottom: 14%;
-    float: left;
-    left: 0;
-    opacity: 0.8;
-    padding: 10px 60px 35px;
-    right: inherit;
-    text-transform: uppercase;
-    color: #fff;
-    text-align: left;
-}
-
-
-    #main-slider .carousel-caption h2
-    {
-        font-size: 38px;
-    }
-
-    #main-slider .carousel-caption h4
-    {
-        font-size: 24px;
-    }
-
-    #main-slider .carousel-caption a
-    {
-        font-size: 22px;
-        color: #2da1c5
-    }
-
-        #main-slider .carousel-caption a:hover
-        {
-            color: #2588a6
-        }
-
-            #main-slider .carousel-caption a:hover i
-            {
-                margin-left: 35px
-            }
-
-        #main-slider .carousel-caption a i
-        {
-            margin-left: 15px;
-            -webkit-transition: all 0.3s ease-in-out;
-            -moz-transition: all 0.3s ease-in-out;
-            -ms-transition: all 0.3s ease-in-out;
-            -o-transition: all 0.3s ease-in-out;
-            transition: all 0.3s ease-in-out;
-        }
-
-#main-slider .carousel-indicators li
-{
-    background-color: #1B7B98;
-    border: 1px solid #1B7B98;
-}
-
-    #main-slider .carousel-indicators li.active
-    {
-        background-color: #fff;
-        border: 1px solid #fff;
-    }
-
-img.UniLogo
+img.UniversityLogo
 {
     width: 15%;
 }
+
+/*************************
+******Footer CSS****
+**************************/
+
+#footer
+{
+    background-color: #212121;
+    background-image: url("../img/footer.png");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFFFFF;
+    font-size: 20px;
+    padding: 35px 0;
+}
+
+    #footer p
+    {
+        color: #000000
+    }
 
 /*************************
 *******Date Form CSS******
@@ -312,7 +163,7 @@ img.UniLogo
 #date_picker
 {
     background-color: #0B81A5;
-    background-image: url(../images/date_picker.jpg);
+    background-image: url(../img/date_picker.jpg);
     background-position: center bottom;
     background-size: contain;
     background-repeat: no-repeat;
@@ -324,12 +175,12 @@ img.UniLogo
 .watch
 {
     position: absolute;
-    left: 0;
-    top: 7%;
+    left: 0px;
 }
 
 #date_picker h2
 {
+    color: white;
     font-size: 42px;
     text-transform: uppercase;
     text-align: center;
@@ -342,427 +193,3 @@ img.UniLogo
     text-align: center;
     padding: 0
 }
-
-    #countdown li
-    {
-        list-style: none;
-        display: inline-block;
-        margin-right: 40px;
-        text-align: center;
-        text-transform: uppercase;
-        font-size: 18px;
-        position: relative;
-    }
-
-        #countdown li:last-child
-        {
-            margin-right: 0
-        }
-
-        #countdown li span
-        {
-            display: block;
-            font-size: 40px;
-            font-weight: 700;
-            height: 82px;
-            line-height: 79px;
-            width: 75px;
-            border-radius: 10px;
-            border-right: 1px solid #9e3e2e;
-            border-bottom: 1px solid #9e3e2e;
-        }
-
-        #countdown li .days
-        {
-            background-color: #45b29d;
-            border-top: 1px solid #6ac1b1;
-            border-left: 1px solid #6ac1b1;
-        }
-
-        #countdown li .hours
-        {
-            background-color: #efc94c;
-            border-top: 1px solid #f2d470;
-            border-left: 1px solid #f2d470;
-        }
-
-        #countdown li .minutes
-        {
-            background-color: #e27a3f;
-            border-top: 1px solid #e89565;
-            border-left: 1px solid #e89565;
-        }
-
-        #countdown li .seconds
-        {
-            background-color: #df5a49;
-            border-top: 1px solid #e57b6d;
-            border-left: 1px solid #e57b6d;
-        }
-
-        #countdown li:before
-        {
-            background-color: #FFFFFF;
-            content: "";
-            height: 11px;
-            left: 0;
-            position: absolute;
-            top: 36px;
-            width: 1px;
-        }
-
-        #countdown li:after
-        {
-            background-color: #FFFFFF;
-            content: "";
-            height: 11px;
-            right: 0;
-            position: absolute;
-            top: 36px;
-            width: 1px;
-        }
-
-.cart
-{
-    background-color: #b34534;
-    position: absolute;
-    right: -200px;
-    top: 37%;
-    width: 252px;
-    -webkit-transition: all 0.7s ease-in-out;
-    -moz-transition: all 0.7s ease-in-out;
-    -ms-transition: all 0.7s ease-in-out;
-    -o-transition: all 0.7s ease-in-out;
-    transition: all 0.7s ease-in-out;
-}
-
-    .cart:hover
-    {
-        right: 0;
-    }
-
-
-    .cart a
-    {
-        color: #FFFFFF;
-        display: block;
-        font-size: 24px;
-        text-transform: uppercase;
-    }
-
-        .cart a i
-        {
-            font-size: 30px;
-            padding: 20px 12px;
-            background-color: #A64030;
-            margin-right: 3px;
-        }
-
-
-
-/*************************
-*******BUAA CSS******
-**************************/
-#buaa
-{
-    background-color: #eee;
-    background-image: url("../images/mainPage/buaa_bg.png");
-    background-position: 50% 0;
-    background-size: contain;
-    position: relative;
-    background-repeat: no-repeat;
-}
-
-    #buaa h2
-    {
-        color: #FFFFFF;
-        font-size: 36px;
-        font-weight: 300;
-        margin-bottom: 40px;
-        margin-top: 70px;
-        text-transform: uppercase;
-    }
-
-.single-buaa
-{
-    margin-bottom: 70px;
-}
-
-    .single-buaa h4
-    {
-        color: black;
-        font-size: 24px;
-        font-weight: 300;
-        line-height: 26px;
-        margin-top: 25px;
-        text-transform: uppercase;
-    }
-
-
-    .single-buaa h5
-    {
-        font-size: 18px;
-        font-weight: 100;
-        display: block;
-    }
-
-#buaa-carousel
-{
-    position: relative;
-}
-
-.buaa-control-left,
-.buaa-control-right
-{
-    position: absolute;
-    font-size: 24px;
-    color: #fff;
-    top: 0;
-}
-
-.buaa-control-left
-{
-    right: 3%
-}
-
-.buaa-control-right
-{
-    right: 0;
-}
-
-/*************************
-*******RUC CSS******
-**************************/
-#ruc
-{
-    background-color: #EBE6D0;
-    background-image: url("../images/mainPage/ruc_bg.png");
-    background-position: 50% 0;
-    background-size: contain;
-    position: relative;
-    background-repeat: no-repeat;
-}
-
-    #ruc h2
-    {
-        color: #FFFFFF;
-        font-size: 36px;
-        font-weight: 300;
-        margin-bottom: 40px;
-        margin-top: 70px;
-        text-transform: uppercase;
-    }
-
-.single-ruc
-{
-    margin-bottom: 70px;
-}
-
-    .single-ruc h4
-    {
-        color: black;
-        font-size: 24px;
-        font-weight: 300;
-        line-height: 26px;
-        margin-top: 25px;
-        text-transform: uppercase;
-    }
-
-
-    .single-ruc h5
-    {
-        font-size: 18px;
-        font-weight: 100;
-        display: block;
-    }
-
-#buaa-carousel
-{
-    position: relative;
-}
-
-.ruc-control-left,
-.ruc-control-right
-{
-    position: absolute;
-    font-size: 24px;
-    color: #fff;
-    top: 0;
-}
-
-.ruc-control-left
-{
-    right: 3%
-}
-
-.ruc-control-right
-{
-    right: 0;
-}
-
-/*************************
-*******PKU CSS******
-**************************/
-#pku
-{
-    background-color: #C44C34;
-    background-image: url("../images/mainPage/pku_bg.png");
-    background-position: 50% 0;
-    background-size: contain;
-    position: relative;
-    background-repeat: no-repeat;
-}
-
-    #pku h2
-    {
-        color: #FFFFFF;
-        font-size: 36px;
-        font-weight: 300;
-        margin-bottom: 40px;
-        margin-top: 70px;
-        text-transform: uppercase;
-    }
-
-.single-pku
-{
-    margin-bottom: 70px;
-}
-
-    .single-pku h4
-    {
-        color: black;
-        font-size: 24px;
-        font-weight: 300;
-        line-height: 26px;
-        margin-top: 25px;
-        text-transform: uppercase;
-    }
-
-
-    .single-pku h5
-    {
-        font-size: 18px;
-        font-weight: 100;
-        display: block;
-    }
-
-#pku-carousel
-{
-    position: relative;
-}
-
-.pku-control-left,
-.pku-control-right
-{
-    position: absolute;
-    font-size: 24px;
-    color: #fff;
-    top: 0;
-}
-
-.pku-control-left
-{
-    right: 3%
-}
-
-.pku-control-right
-{
-    right: 0;
-}
-/*************************
-*******THU CSS******
-**************************/
-#thu
-{
-    background-color: #75B372;
-    background-image: url("../images/mainPage/thu_bg.png");
-    background-position: 50% 0;
-    background-size: contain;
-    position: relative;
-    background-repeat: no-repeat;
-}
-
-    #thu h2
-    {
-        color: #FFFFFF;
-        font-size: 36px;
-        font-weight: 300;
-        margin-bottom: 40px;
-        margin-top: 70px;
-        text-transform: uppercase;
-    }
-
-.single-thu
-{
-    margin-bottom: 70px;
-}
-
-    .single-thu h4
-    {
-        color: black;
-        font-size: 24px;
-        font-weight: 300;
-        line-height: 26px;
-        margin-top: 25px;
-        text-transform: uppercase;
-    }
-
-
-    .single-thu h5
-    {
-        font-size: 18px;
-        font-weight: 100;
-        display: block;
-    }
-
-#thu-carousel
-{
-    position: relative;
-}
-
-.thu-control-left,
-.thu-control-right
-{
-    position: absolute;
-    font-size: 24px;
-    color: #fff;
-    top: 0;
-}
-
-.thu-control-left
-{
-    right: 3%
-}
-
-.thu-control-right
-{
-    right: 0;
-}
-
-
-
-/*************************
-******Footer CSS****
-**************************/
-
-#footer
-{
-    background-color: #212121;
-    background-image: url("../images/footer-bg.jpg");
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #FFFFFF;
-    font-size: 20px;
-    padding: 35px 0;
-}
-
-    #footer a
-    {
-        color: #f7ab24
-    }
-
-        #footer a:hover
-        {
-            color: #1B7B98
-        }

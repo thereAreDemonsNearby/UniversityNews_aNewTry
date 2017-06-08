@@ -7,6 +7,10 @@
   <PropertyGroup>
     <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Properties\PublishProfiles\UniversityNews - Web Deploy.pubxml" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="bootstrap" Version="3.3.7" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
@@ -27,12 +31,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="Views\Home\" />
     <Folder Include="Views\Admin\" />
     <Folder Include="Views\Home\" />
     <Folder Include="Views\Account\" />
     <Folder Include="Views\Home\" />
     <Folder Include="Views\History\" />
+    <Folder Include="Views\Home\" />
   </ItemGroup>
 
 </Project>

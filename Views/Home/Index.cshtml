@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "��ҳ";
     string Title = "��ҳ";
-    Layout = "_Layout";
+    Layout = null;
 
     var BUAAList = Model.Where(n => n.UniversityName == "BUAA");
     var THUList = Model.Where(n => n.UniversityName == "THU");
@@ -13,235 +13,424 @@
     const int itemsPerRow = 3;
 }
 
-    <!--slider-->
-    <!--/#home-->
-    <section id="home">
-        <div id="main-slider" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#main-slider" data-slide-to="0" class="active"></li>
-                <li data-target="#main-slider" data-slide-to="1"></li>
-                <li data-target="#main-slider" data-slide-to="2"></li>
-                <li data-target="#main-slider" data-slide-to="3"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="item active">
-                    <img class="img-responsive" src="images/slider/buaa.jpg" alt="slider">
-                </div>
-                <div class="item">
-                    <img class="img-responsive" src="images/slider/thu.jpg" alt="slider">
-                </div>
-                <div class="item">
-                    <img class="img-responsive" src="images/slider/ruc.jpg" alt="slider">
-                </div>
-                <div class="item">
-                    <img class="img-responsive" src="images/slider/pku.jpg" alt="slider">
-                </div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>UniversityNews</title>
+
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+
+    <!-- Template styles -->
+    <style rel="stylesheet">
+        /* TEMPLATE STYLES */
+        /* Necessary for full page carousel*/
+
+        html,
+        body,
+        .view
+        {
+            height: 100%;
+        }
+        /* Navigation*/
+
+        .navbar
+        {
+            background-color: transparent;
+        }
+
+        .scrolling-navbar
+        {
+            -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+            -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+            transition: background .5s ease-in-out, padding .5s ease-in-out;
+        }
+
+        .top-nav-collapse
+        {
+            background-color: #1C2331;
+        }
+
+        footer.page-footer
+        {
+            background-color: #1C2331;
+            margin-top: 0;
+        }
+
+
+        /* Carousel*/
+
+        .carousel,
+        .carousel-item,
+        .active
+        {
+            height: 100%;
+        }
+
+        .carousel-inner
+        {
+            height: 100%;
+        }
+        /*Caption*/
+
+        .flex-center
+        {
+            color: #fff;
+        }
+    </style>
+
+    <!-- Main styles -->
+    <link href="css/main.css" rel="stylesheet">
+    <link href="min/custom-min.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-toggleable-md navbar-dark fixed-top scrolling-navbar">
+        <div class="container">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                <strong>UniversityNews</strong>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav1">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="History" asp-action="Index">History</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </section>
+    </nav>
+    <!--/.Navbar-->
+    <!--Carousel Wrapper-->
+    <div id="carousel-example-3" class="carousel slide carousel-fade white-text" data-ride="carousel" data-interval="false">
+        <!--Indicators-->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-3" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-3" data-slide-to="1"></li>
+            <li data-target="#carousel-example-3" data-slide-to="2"></li>
+            <li data-target="#carousel-example-3" data-slide-to="3"></li>
+        </ol>
+        <!--/.Indicators-->
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
 
-    <!--/#buaa-->
+            <!-- First slide -->
+            <div class="carousel-item active view hm-black-light" style="background-image: url('img/buaa.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+                <!-- Caption -->
+                <div class="full-bg-img flex-center white-text">
+                    
+                    <ul class="animated fadeInUp col-md-12">
+                        <li>
+                            <a target="_blank" href="http://www.buaa.edu.cn/" class="btn btn-default btn-lg flex-item" rel="nofollow">帝都仰望星空大学</a>
+                        </li>
+                        <li>
+                            <p class="flex-item">德才兼备，知行合一</p>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.Caption -->
+
+            </div>
+            <!-- /.First slide -->
+            <!-- Second slide -->
+            <div class="carousel-item view hm-black-light" style="background-image: url('img/thu.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+                <!-- Caption -->
+                <div class="full-bg-img flex-center white-text">
+                    <ul class="animated fadeInUp col-md-12">
+                        <li>
+                            <a target="_blank" href="http://news.tsinghua.edu.cn/publish/thunews/10303/index.html" class="btn btn-primary btn-lg" rel="nofollow">五道口理工学院</a>
+                        </li>
+                        <li>
+                            <p class="flex-item">自强不息，厚德载物</p>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.Caption -->
+
+            </div>
+            <!-- /.Second slide -->
+            <!-- Third slide -->
+            <div class="carousel-item view hm-black-light" style="background-image: url('img/ruc.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+                <!-- Caption -->
+                <div class="full-bg-img flex-center white-text">
+                    <ul class="animated fadeInUp col-md-12">
+                        <li>
+                            <a target="_blank" href="http://news.ruc.edu.cn/archives/category/important_news" class="btn btn-default btn-lg" rel="nofollow">中共中央第二党校</a>
+                        </li>
+                        <li>
+                            <p class="flex-item">实事求是</p>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.Caption -->
+
+            </div>
+            <!-- /.Third slide -->
+            <!-- Fourth slide -->
+            <div class="carousel-item view hm-black-light" style="background-image: url('img/pku.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+                <!-- Caption -->
+                <div class="full-bg-img flex-center white-text">
+                    <ul class="animated fadeInUp col-md-12">
+                        <li>
+                            <a target="_blank" href="http://news.pku.edu.cn/xwzh/xwzh.htm" class="btn btn-primary btn-lg" rel="nofollow">圆明园职业技术学院</a>
+                        </li>
+                        <li>
+                            <p class="flex-item">爱国，进步，民主，科学</p>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.Caption -->
+
+            </div>
+            <!-- /.Fourth slide -->
+        </div>
+        <!--/.Slides-->
+        <!--Controls-->
+        <a class="carousel-control-prev" href="#carousel-example-3" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel-example-3" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        <!--/.Controls-->
+    </div>
+    <!--/.Carousel Wrapper-->
+    <!--/.Main layout-->
+    <div>
+        <br />
+    </div>
+
+    <!--BUAA News-->
     <section id="buaa">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-md-9">
-                    <div id="buaa-carousel" class="carousel slide" data-interval="false">
-                        @*<h2 class="heading">BUAA News</h2>*@
-                        <img class="UniLogo" src="~/images/mainPage/buaa_logo.jpg"/>
-                        @*<a class="buaa-control-left" href="#buaa-carousel" data-slide="prev"><i class="fa fa-angle-left"></i></a>
-                        <a class="buaa-control-right" href="#buaa-carousel" data-slide="next"><i class="fa fa-angle-right"></i></a>*@
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                @*<div class="row">
-                                    @foreach (var item in BUAAList)
-                                    {
-                                        <div class="col-md-4">
-                                            <div class="single-buaa">
-                                                <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
-                                                <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
-                                            </div>
-                                        </div>
-                                    }
-                                </div>*@
-                                @{
-                                    rowCtrl = 0;
-                                }
-                                @foreach (var item in BUAAList)
-                                {
-                                    if (rowCtrl % itemsPerRow == 0)
-                                    {
-                                        @:<div class="row">
-                                    }
-                                    <div class="col-md-4">
-                                        <div class="single-buaa">
-                                            <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
-                                            <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
-                                        </div>
-                                    </div>
-                                    if (rowCtrl % itemsPerRow == itemsPerRow - 1)
-                                    {
-                                        @:</div>
-                                    }
-                                    rowCtrl++;
-                                }
-                            </div>
-                        </div>
-                    </div>
+
+            <!--Page heading-->
+            <div>
+                <br />
+            </div>
+            <div class="row wow fadeIn" data-wow-delay="0.2s">
+                <div class="col-md-12">
+                    <img class="UniversityLogo" src="~/img/buaa_logo.jpg" />
                 </div>
             </div>
+            <!--/.Page heading-->
+            <hr>
+            @foreach (var item in BUAAList)
+            {
+            <!--First row-->
+                <div class="row wow fadeIn" data-wow-delay="0.2s">
+                    <!--Featured image-->
+                    <div class="col-lg-7">
+                        <div class="view overlay hm-white-light z-depth-1-half">
+                            <img src="@item.PictureUrl" class="img-fluid" alt="">
+                            <div class="mask"></div>
+                        </div>
+                    </div>
+                    <!--/.Featured image-->
+                    <!--Post excerpt-->
+                    <div class="col-lg-5">
+                        <h2 class="post-title">@(((DateTime)item.OriginalDate).Month)月@(((DateTime)item.OriginalDate).Day)日</h2>
+                        <p class="lead">@item.Title</p>
+                        <div class="read-more">
+                            <a href="@item.NewsUrl" class="btn btn-primary">阅读更多</a>
+                        </div>
+                    </div>
+                    <!--/.Post excerpt-->
+                </div>
+            <!--/.First row-->
+                <hr class="extra-margin">
+
+            }
         </div>
     </section>
+    <!--/.BUAA News-->
 
-    <!--/#thu-->
+    <!--THU News-->
     <section id="thu">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-md-9">
-                    <div id="thu-carousel" class="carousel slide" data-interval="false">
-                        @*<h2 class="heading">THU News</h2>*@
-                        <img class="UniLogo" src="~/images/mainPage/thu_logo.png" />
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                @*<div class="row">
-                                    @foreach (var item in THUList)
-                                    {
-                                        <div class="col-md-4">
-                                            <div class="single-buaa">
-                                                <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
-                                                <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
-                                            </div>
-                                        </div>
-                                    }
-                                </div>*@
-                                @{
-                                    rowCtrl = 0;
-                                }
-                                @foreach (var item in THUList)
-                                {
-                                    if (rowCtrl % itemsPerRow == 0)
-                                    {
-                                        @:<div class="row">
-                                    }
-                                    <div class="col-md-4">
-                                        <div class="single-buaa">
-                                            <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
-                                            <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
-                                        </div>
-                                    </div>
-                                    if (rowCtrl % itemsPerRow == itemsPerRow - 1)
-                                    {
-                                        @:</div>
-                                    }
-                                    rowCtrl++;
-                                }
-                            </div>
-                        </div>
-                    </div>
+
+            <!--Page heading-->
+            <div>
+                <br />
+            </div>
+            <div class="row wow fadeIn" data-wow-delay="0.2s">
+                <div class="col-md-12">
+                    <img class="UniversityLogo" src="~/img/thu_logo.png" />
                 </div>
             </div>
+            <!--/.Page heading-->
+            <hr>
+            @foreach (var item in THUList)
+            {
+            <!--First row-->
+                <div class="row wow fadeIn" data-wow-delay="0.2s">
+                    <!--Featured image-->
+                    <div class="col-lg-7">
+                        <div class="view overlay hm-white-light z-depth-1-half">
+                            <img src="@item.PictureUrl" class="img-fluid" alt="">
+                            <div class="mask"></div>
+                        </div>
+                    </div>
+                    <!--/.Featured image-->
+                    <!--Post excerpt-->
+                    <div class="col-lg-5">
+                        <h2 class="post-title">@(((DateTime)item.OriginalDate).Month)月@(((DateTime)item.OriginalDate).Day)日</h2>
+                        <p class="lead">@item.Title</p>
+                        <div class="read-more">
+                            <a href="@item.NewsUrl" class="btn btn-primary">阅读更多</a>
+                        </div>
+                    </div>
+                    <!--/.Post excerpt-->
+                </div>
+            <!--/.First row-->
+                <hr class="extra-margin">
+
+            }
         </div>
     </section>
+    <!--/.THU News-->
 
-    <!--/#ruc-->
+    <!--RUC News-->
     <section id="ruc">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-md-9">
-                    <div id="ruc-carousel" class="carousel slide" data-interval="false">
-                        @*<h2 class="heading">RUC News</h2>*@
-                        <img class="UniLogo" src="~/images/mainPage/ruc_logo.png" />
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                @*<div class="row">
-                                    @foreach (var item in RUCList)
-                                    {
-                                        <div class="col-md-4">
-                                            <div class="single-buaa">
-                                                <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
-                                                <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
-                                            </div>
-                                        </div>
-                                    }
-                                </div>*@
-                                @{ 
-                                    rowCtrl = 0;
-                                }
-                                @foreach (var item in RUCList)
-                                {
-                                    if (rowCtrl % itemsPerRow == 0)
-                                    {
-                                        @:<div class="row">
-                                    }
-                                    <div class="col-md-4">
-                                        <div class="single-buaa">
-                                            <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
-                                            <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
-                                        </div>
-                                    </div>
-                                    if (rowCtrl % itemsPerRow == itemsPerRow - 1)
-                                    {
-                                        @:</div>
-                                    }
-                                    rowCtrl++;
-                                }
-                            </div>
-                        </div>
 
-                    </div>
+            <!--Page heading-->
+            <div>
+                <br />
+            </div>
+            <div class="row wow fadeIn" data-wow-delay="0.2s">
+                <div class="col-md-12">
+                    <img class="UniversityLogo" src="~/img/ruc_logo.png" />
                 </div>
             </div>
+            <!--/.Page heading-->
+            <hr>
+            @foreach (var item in RUCList)
+            {
+            <!--First row-->
+                <div class="row wow fadeIn" data-wow-delay="0.2s">
+                    <!--Featured image-->
+                    <div class="col-lg-7">
+                        <div class="view overlay hm-white-light z-depth-1-half">
+                            <img src="@item.PictureUrl" class="img-fluid" alt="">
+                            <div class="mask"></div>
+                        </div>
+                    </div>
+                    <!--/.Featured image-->
+                    <!--Post excerpt-->
+                    <div class="col-lg-5">
+                        <h2 class="post-title">@(((DateTime)item.OriginalDate).Month)月@(((DateTime)item.OriginalDate).Day)日</h2>
+                        <p class="lead">@item.Title</p>
+                        <div class="read-more">
+                            <a href="@item.NewsUrl" class="btn btn-primary">阅读更多</a>
+                        </div>
+                    </div>
+                    <!--/.Post excerpt-->
+                </div>
+            <!--/.First row-->
+                <hr class="extra-margin">
+
+            }
         </div>
     </section>
+    <!--/.RUC News-->
 
-
-    <!--/#pku-->
+    <!--PKU News-->
     <section id="pku">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-md-9">
-                    <div id="pku-carousel" class="carousel slide" data-interval="false">
-                        @*<h2 class="heading">PKU News</h2>*@
-                        <img class="UniLogo" src="~/images/mainPage/pku_logo.png" />
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                @*<div class="row">
-                                    @foreach (var item in PKUList)
-                                    {
-                                        <div class="col-md-4">
-                                            <div class="single-buaa">
-                                                <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
-                                                <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
-                                            </div>
-                                        </div>
-                                    }
-                                </div>*@
-                                @{
-                                    rowCtrl = 0;
-                                }
-                                @foreach (var item in PKUList)
-                                {
-                                    if (rowCtrl % itemsPerRow == 0)
-                                    {
-                                        @:<div class="row">
-                                    }
-                                    <div class="col-md-4">
-                                        <div class="single-buaa">
-                                            <img class="img-responsive" src="@item.PictureUrl" alt="event-image">
-                                            <a href="@item.NewsUrl"><h4>@item.Title</h4></a>
-                                        </div>
-                                    </div>
-                                    if (rowCtrl % itemsPerRow == itemsPerRow - 1)
-                                    {
-                                        @:</div>
-                                    }
-                                    rowCtrl++;
-                                }
-                            </div>
-                        </div>
-                    </div>
+
+            <!--Page heading-->
+            <div>
+                <br />
+            </div>
+            <div class="row wow fadeIn" data-wow-delay="0.2s">
+                <div class="col-md-12">
+                    <img class="UniversityLogo" src="~/img/pku_logo.png" />
                 </div>
             </div>
+            <!--/.Page heading-->
+            <hr>
+            @foreach (var item in PKUList)
+            {
+            <!--First row-->
+                <div class="row wow fadeIn" data-wow-delay="0.2s">
+                    <!--Featured image-->
+                    <div class="col-lg-7">
+                        <div class="view overlay hm-white-light z-depth-1-half">
+                            <img src="@item.PictureUrl" class="img-fluid" alt="">
+                            <div class="mask"></div>
+                        </div>
+                    </div>
+                    <!--/.Featured image-->
+                    <!--Post excerpt-->
+                    <div class="col-lg-5">
+                        <h2 class="post-title">@(((DateTime)item.OriginalDate).Month)月@(((DateTime)item.OriginalDate).Day)日</h2>
+                        <p class="lead">@item.Title</p>
+                        <div class="read-more">
+                            <a href="@item.NewsUrl" class="btn btn-primary">阅读更多</a>
+                        </div>
+                    </div>
+                    <!--/.Post excerpt-->
+                </div>
+            <!--/.First row-->
+                <hr class="extra-margin">
+
+            }
         </div>
     </section>
+    <!--/.PKU News-->
 
-  
+
+    <!--Footer-->
+    <footer id="footer">
+        <div class="container">
+            <div class="text-center">
+                <p> Copyright  &copy;2017 <br> cszh </p>
+            </div>
+        </div>
+    </footer>
+    <!--/.Footer-->
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/tether.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+
+    <script>
+        new WOW().init();
+    </script>
+</body>
+
+</html>
