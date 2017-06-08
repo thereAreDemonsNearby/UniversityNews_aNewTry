@@ -23,7 +23,7 @@ namespace UniversityNews_aNewTry.Controllers
 
             var list = await context.News.Where(n => (n.IsPublished ?? false)
                                     && n.OriginalDate.Value.Date == date.Date)
-                                    .ToListAsync();
+                                    .OrderByDescending(n => n.OriginalDate).ToListAsync();
             return View(list);
         }
     }

@@ -21,7 +21,7 @@ namespace UniversityNews_aNewTry.Controllers
         {
             var list = await context.News.Where(n => ((n.IsPublished ?? false)
                                                     && NearXDays(n.OriginalDate.Value, 20))
-                                                ).ToListAsync();
+                                                ).OrderByDescending(n=>n.OriginalDate).ToListAsync();
             return View(list);
         }
 
