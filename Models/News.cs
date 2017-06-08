@@ -11,21 +11,21 @@ namespace UniversityNews_aNewTry.Models
         [Display(Name = "Url")]
         public string NewsUrl { get; set; }
 
-        [Display(Name = "Picture Url")]
+        [Display(Name = "图片 Url")]
         public string PictureUrl { get; set; }
 
-        [Display(Name = "Original Date")]
+        [Display(Name = "新闻日期")]
         [DataType(DataType.Date)]
         public DateTime? OriginalDate { get; set; }
 
-        [Display(Name = "Publish Date")]
+        [Display(Name = "发布日期")]
         [DataType(DataType.Date)]
         public DateTime? PublishDate { get; set; }
 
-        [Display(Name = "Published?")]
+        [Display(Name = "已发布?")]
         public bool? IsPublished { get; set; }
 
-        [Display(Name = "University Name")]
+        [Display(Name = "高校名")]
         public string UniversityName { get; set; }
     }
 }

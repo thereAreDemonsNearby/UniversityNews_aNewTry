@@ -1,8 +1,8 @@
 ﻿@model List<News>
 
 @{
-    ViewData["Title"] = "��ҳ";
-    string Title = "��ҳ";
+    ViewData["Title"] = "大学新闻汇总";
+    string Title = "大学新闻汇总";
     Layout = null;
 
     var BUAAList = Model.Where(n => n.UniversityName == "BUAA");
@@ -108,7 +108,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <a class="navbar-brand" asp-controller="Home" asp-action="Index">
-                <strong>UniversityNews</strong>
+                <strong>大学新闻汇总</strong>
             </a>
             <div class="collapse navbar-collapse" id="navbarNav1">
                 <ul class="navbar-nav mr-auto">

@@ -33,7 +33,6 @@
     <Folder Include="Controllers\" />
     <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="Views\Home\" />
-    <Folder Include="Views\Admin\" />
     <Folder Include="Views\Home\" />
     <Folder Include="Views\Account\" />
     <Folder Include="Views\Home\" />

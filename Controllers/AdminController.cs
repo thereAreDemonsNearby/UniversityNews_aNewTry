@@ -24,9 +24,26 @@ namespace UniversityNews_aNewTry.Controllers
             return View();
         }
 
+        public async Task<IActionResult> Details(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var news = await context.News
+                .SingleOrDefaultAsync(m => m.Title == id);
+            if (news == null)
+            {
+                return NotFound();
+            }
+
+            return View(news);
+        }
+
         public async Task<IActionResult> EditBUAA()
         {
-            ViewData["UniName"] = "BUAA";
+            ViewData["UniName"] = "北京航空航天大学";
             var list = await context.News.Where(n => n.UniversityName == "BUAA").ToListAsync();
             list.Sort((a, b) =>
             {
@@ -50,7 +67,7 @@ namespace UniversityNews_aNewTry.Controllers
 
         public async Task<IActionResult> EditPKU()
         {
-            ViewData["UniName"] = "PKU";
+            ViewData["UniName"] = "北京大学";
             var list = await context.News.Where(n => n.UniversityName == "PKU").ToListAsync();
             list.Sort((a, b) =>
             {
@@ -74,7 +91,7 @@ namespace UniversityNews_aNewTry.Controllers
 
         public async Task<IActionResult> EditTHU()
         {
-            ViewData["UniName"] = "THU";
+            ViewData["UniName"] = "清华大学";
             var list = await context.News.Where(n => n.UniversityName == "THU").ToListAsync();
             list.Sort((a, b) =>
             {
@@ -98,7 +115,7 @@ namespace UniversityNews_aNewTry.Controllers
 
         public async Task<IActionResult> EditRUC()
         {
-            ViewData["UniName"] = "RUC";
+            ViewData["UniName"] = "中国人民大学";
             var list = await context.News.Where(n => n.UniversityName == "RUC").ToListAsync();
             list.Sort((a, b) =>
             {

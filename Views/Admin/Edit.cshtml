@@ -1,4 +1,4 @@
-@model IEnumerable<UniversityNews_aNewTry.Models.News>
+﻿@model IEnumerable<UniversityNews_aNewTry.Models.News>
 
 @{
     ViewData["Title"] = "Index";
@@ -7,95 +7,77 @@
 
 <h2>@ViewData["UniName"]</h2>
 
-<table class="table">
-   <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NewsUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PictureUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.OriginalDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PublishDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsPublished)
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NewsUrl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PictureUrl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OriginalDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PublishDate)
-            </td>
-            <td>
-                @if (item.IsPublished ?? false)
-                {
-                    @:Yes
-                }
-                else
-                {
-                    @:No
-                }
-            </td>
-            <td>
-                <a class="btn btn-sm btn-primary pull-right"
-                    asp-action="Publish" asp-route-id="@item.Title" >
-                   @if (item.IsPublished ?? false)
-                   {
-                        @:Withdraw
-                   }
-                   else
-                   {
-                        @:Publish
-                   }
-                </a>
-                @*<form  method="post" asp-action="Publish">
-                    @{ 
-                        string val;
-                        bool change;
-                        if (item.IsPublished ?? false)
+<div>
+    <table class="table" width="100%"  style="table-layout:fixed;">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.NewsUrl)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PictureUrl)
+                    </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.OriginalDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PublishDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsPublished)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.NewsUrl)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PictureUrl)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OriginalDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PublishDate)
+                    </td>
+                    <td>
+                        @if (item.IsPublished ?? false)
                         {
-                            val = "Withdraw";
-                            change = false;
+                            @:是
                         }
                         else
                         {
-                            val = "Publish";
-                            change = true;
+                            @:否
                         }
-                    }
-                    <input type="hidden" asp-for="@item.Title" />
-                    <input type="hidden" asp-for="@item.NewsUrl" />
-                    <input type="hidden" asp-for="@item.PictureUrl" />
-                    <input type="hidden" asp-for="@item.OriginalDate" />
-                    <input type="hidden" asp-for="@item.PublishDate" />
-                    <input type="hidden" asp-for="@item.IsPublished" />
-                    <input type="hidden" asp-for="@item.UniversityName" />
-                    <input type="submit" value="@val" class="btn btn-sm btn-primary" />
-                </form>*@
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Title">Details</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-sm btn-primary pull-right"
+                           asp-action="Publish" asp-route-id="@item.Title">
+                            @if (item.IsPublished ?? false)
+                            {
+                                @:撤回
+                             }
+                            else
+                            {
+                                @:发布
+                            }
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
