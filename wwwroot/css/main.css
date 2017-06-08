@@ -28,7 +28,32 @@
     margin-bottom: 70px;
 }
 
- 
+/*************************
+*******THU CSS******
+**************************/
+#thu
+{
+    background-color: #75b372;
+    background-image: url("../img/thu_bg.jpg");
+    background-position: 50% 0;
+    background-size: contain;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+    #thu h2
+    {
+        color: #ffffff;
+        font-size: 36px;
+        font-weight: 300;
+        margin-bottom: 40px;
+        margin-top: 70px;
+    }
+
+    #thu p
+    {
+        color: #ffffff;
+    }
 
 /*************************
 *******PKU CSS******
@@ -56,10 +81,7 @@
     {
         color: #ffffff;
     }
-.single-pku
-{
-    margin-bottom: 70px;
-}
+
 
   
     
