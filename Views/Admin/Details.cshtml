@@ -1,7 +1,7 @@
-@model UniversityNews_aNewTry.Models.News
+﻿@model UniversityNews_aNewTry.Models.News
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "详情";
     Layout = "_AdminLayout";
 }
 
@@ -52,18 +52,18 @@
 <div>
     @if (Model.UniversityName == "BUAA")
     {
-        <a asp-action="EditBUAA">Back to List</a>
+        <a asp-action="EditBUAA">返回列表</a>
     }
     else if (Model.UniversityName == "PKU")
     {
-        <a asp-action="EditPKU">Back to List</a>
+        <a asp-action="EditPKU">返回列表</a>
     }
     else if (Model.UniversityName == "RUC")
     {
-        <a asp-action="EditRUC">Back to List</a>
+        <a asp-action="EditRUC">返回列表</a>
     }
     else if (Model.UniversityName == "THU")
     {
-        <a asp-action="EditTHU">Back to List</a>
+        <a asp-action="EditTHU">返回列表</a>
     }
 </div>

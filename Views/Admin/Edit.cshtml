@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<UniversityNews_aNewTry.Models.News>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "管理页";
     Layout = "_AdminLayout";
 }
 
@@ -61,7 +61,7 @@
                         }
                     </td>
                     <td>
-                        <a asp-action="Details" asp-route-id="@item.Title">Details</a>
+                        <a asp-action="Details" asp-route-id="@item.Title">查看详情</a>
                     </td>
                     <td>
                         <a class="btn btn-sm btn-primary pull-right"

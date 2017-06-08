@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ForAdministrator</title>
+    <title>@ViewData["Title"] - 管理员限定</title>
 
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -26,11 +26,11 @@
     <nav class="navbar navbar-inverse" style="width: 100%">
         <div class="container">
             <div class="navbar-header">
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">UniversityNews</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">大学新闻汇总</a>
             </div>
             <div class="panel-heading">
                 <a class="btn btn-sm btn-primary pull-right"
-                   asp-action="Logout" asp-controller="Account">Log Out</a>
+                   asp-action="Logout" asp-controller="Account">注销</a>
             </div>
         </div>
     </nav>
