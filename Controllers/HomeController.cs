@@ -20,7 +20,7 @@ namespace UniversityNews_aNewTry.Controllers
         public async Task<IActionResult> Index()
         {
             var list = await context.News.Where(n => ((n.IsPublished ?? false)
-                                                    && NearXDays(n.OriginalDate.Value, 20))
+                                                    && NearXDays(n.OriginalDate.Value, 5))
                                                 ).OrderByDescending(n=>n.OriginalDate).ToListAsync();
             return View(list);
         }

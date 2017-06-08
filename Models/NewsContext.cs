@@ -22,11 +22,11 @@ namespace UniversityNews_aNewTry.Models
 
                 entity.Property(e => e.Title).HasMaxLength(100);
 
-                entity.Property(e => e.NewsUrl).HasMaxLength(100);
+                entity.Property(e => e.NewsUrl).HasMaxLength(512);
 
                 entity.Property(e => e.OriginalDate).HasColumnType("datetime");
 
-                entity.Property(e => e.PictureUrl).HasMaxLength(100);
+                entity.Property(e => e.PictureUrl).HasMaxLength(512);
 
                 entity.Property(e => e.PublishDate).HasColumnType("datetime");
 
